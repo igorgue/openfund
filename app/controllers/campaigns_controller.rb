@@ -15,8 +15,8 @@ class CampaignsController < ApplicationController
     @campaign.name = params[:name]
     @campaign.goal = params[:goal]
     @campaign.domain = params[:domain]
-    @campaign.name = params[:name]
-    @campaign.name = params[:name]
+    @campaign.start_time  = Time.zone.parse("#{params[:date]} #{params[:time]}")
+    @campaign.user_id = current_user_id
     @campaign.save
   end
 
