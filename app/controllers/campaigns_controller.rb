@@ -4,8 +4,6 @@ class CampaignsController < ApplicationController
   before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new]
 
   def show
-    # get the campaign
-    @campaign = Campaign.find_by_domain! params[:domain]
   end
 
   def new
@@ -18,6 +16,10 @@ class CampaignsController < ApplicationController
   end
 
   def delete
+  end
+
+  def show_by_domain
+    @campaign = Campaign.find_by_domain!(params[:domain])
   end
 
 private

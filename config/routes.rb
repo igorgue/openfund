@@ -4,7 +4,7 @@ Selfstarter::Application.routes.draw do
   devise_for :users
 
   root :to => 'home#index'
-  match '/:domain' => 'campaigns#show', :constraints  => {:domain => /[0-z\.]+/}
+  match '/:domain' => 'campaigns#show_by_domain', :constraints  => {:domain => /[0-z\.]+/}
   #root :to => 'preorder#index'
   #match '/preorder'               => 'preorder#index'
   #get 'preorder/checkout'
