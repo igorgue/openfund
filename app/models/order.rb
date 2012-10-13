@@ -19,11 +19,18 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :address_one, :address_two, :city, :country, :number, :state, :status, :token, :transaction_id, :zip, :shipping, :tracking_number, :name, :price, :phone, :expiration
-  attr_readonly :uuid
-  before_validation :generate_uuid!, :on => :create
-  belongs_to :user
-  self.primary_key = 'uuid'
+  attr_accessible :address_one,
+                  :address_two,
+                  :city,
+                  :state,
+                  :zip,
+                  :country,
+                  :name,
+                  :price,
+                  :phone,
+                  :card_id,
+                  :email,
+                  :transaction_id
 
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
   def self.prefill!(options = {})
