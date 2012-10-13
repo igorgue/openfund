@@ -16,5 +16,9 @@
 #
 
 class CampaignSection < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :campaign_id, :title, :text, :type
+
+  validates_attachment :image, 
+  	:content_type => { :content_type => ["image/jpg", "image/png", "image/gif"] }
+  has_attached_file :image, :styles => { :desktop => "800x180>", :mobile => "640x140>" }
 end
