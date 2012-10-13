@@ -5,14 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-campaign = Campaign.new(
-  name: 'Lockitron',
-  goal: '10000.00',
-  domain: 'lockitron.com',
-  tagline: 'Keyless entry using your phone',
-  secondary_tagline: 'Lock your door from anywhere in the world',
-  start_time: 1.week.ago,
-  show_link: true
-)
 
+user = User.new({:email => "startupkids@gmail.com", :password => "111111", :password_confirmation => "111111"})
+user.save
+
+campaign = Campaign.new(
+  name: 'The Startup Kids Screening',
+  goal: '750',
+  domain: 'thestartupkids.com',
+  tagline: 'Watch the new docummentary about startups',
+  start_time: 1.week.ago,
+  show_link: true,
+  user: user
+)
 campaign.save
