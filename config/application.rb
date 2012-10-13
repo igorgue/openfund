@@ -9,6 +9,8 @@ end
 module Selfstarter
   
   class Application < Rails::Application
+    APPLICATION_FEE = 0.05
+    CURRENCY = 'usd'
 
     # --- Standard Rails Config ---
     config.time_zone = 'Pacific Time (US & Canada)'
