@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013174451) do
+ActiveRecord::Schema.define(:version => 20121013180112) do
 
   create_table "campaign_faqs", :force => true do |t|
     t.integer  "campaign_id"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20121013174451) do
     t.string   "card_id"
     t.string   "transaction_id"
     t.string   "email"
+    t.integer  "level_id"
   end
 
   create_table "users", :force => true do |t|
