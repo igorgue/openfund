@@ -12,7 +12,6 @@ gem 'stripe', '1.7.4'     # C.R.E.A.M, get the money!
 
 group :development do
   gem 'sqlite3'
-  gem 'mysql2'
 end
 
 group :production do
