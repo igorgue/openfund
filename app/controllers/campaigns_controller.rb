@@ -3,6 +3,8 @@ class CampaignsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :update, :delete, :edit]
 
   def show
+    # get the campaign
+    @campaign = Campaign.find_by_domain! params[:domain]
   end
 
   def new
