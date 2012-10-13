@@ -1,6 +1,13 @@
 source 'https://rubygems.org'
 
+# gem 'amazon_flex_pay' # http://i.imgur.com/hindM.jpg
+
+gem 'devise', '2.1.2'     # Authenication, baby.
+gem 'jquery-rails'        # jQuery? What did you cal me, boy!?
+gem 'paperclip', '3.3.0'  # Attach things
 gem 'rails', '3.2.8'
+gem 'rails_config'        # https://github.com/railsjedi/rails_config
+gem 'stripe', '1.7.4'     # C.R.E.A.M, get the money!
 
 group :development do
   gem 'sqlite3'
@@ -19,12 +26,3 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
-
-# jQuery
-gem 'jquery-rails'
-
-# Kickstarter's awesome Amazon Flexible Payments gem
-gem 'amazon_flex_pay'
-
-# Configuration File
-gem 'rails_config'
