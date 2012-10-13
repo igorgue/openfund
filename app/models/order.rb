@@ -18,70 +18,36 @@
 #  transaction_id :string(255)
 #
 
+require 'stripe'
+
 class Order < ActiveRecord::Base
-  attr_accessible :address_one, :address_two, :city, :country, :number, :state, :status, :token, :transaction_id, :zip, :shipping, :tracking_number, :name, :price, :phone, :expiration
-  attr_readonly :uuid
-  before_validation :generate_uuid!, :on => :create
-  belongs_to :user
-  self.primary_key = 'uuid'
+  belongs_to :campaign_level
+  attr_accessible :address_one, :address_two, :city, :state, :zip, :country, :name, :price, :phone, :card_id, :email, :transaction_id, :level_id
+  validates_presence_of :name, :email, :price, :card_id, :campaign_level_id
 
-  # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
-  def self.prefill!(options = {})
-    @order          = Order.new
-    @order.name     = options[:name]
-    @order.user_id  = options[:user_id]
-    @order.price    = options[:price]
-    @order.number   = Order.next_order_number || 1
-    @order.save!
+  # Public: Charge the user from a :card_id and creates a :transaction_id and
+  # saves the order
+  #
+  # Examples
+  #
+  #   order.charge!
+  #   # => 'tok_0XeV9Tea4w1AkQ'
+  #
+  # Returns the stripe token
+  def charge!
+    # get the credit card details submitted by the form
+    # create the charge on Stripe's servers - this will charge the user's card
+    charge = Stripe::Charge.create(
+      {
+        :amount => @campaign_level.price_to_cents, # amount in cents
+        :currency => CURRENCY,
+        :card => @card_id,
+        :description => @campaign_level.title,
+        :application_fee => @campaign_level.application_fee_cents # amount in cents
+      },
+      @campaign_level.campaign.user.stripe_token # user's access token from the Stripe Connect flow
+    )
 
-    @order
+    charge['id']
   end
-
-  # After authenticating with Amazon, we get the rest of the details
-  def self.postfill!(options = {})
-    @order = Order.find_by_uuid!(options[:callerReference])
-    @order.token                = options[:tokenID]
-    if @order.token.present?
-      @order.address_one     = options[:addressLine1]
-      @order.address_two     = options[:addressLine2]
-      @order.city            = options[:city]
-      @order.state           = options[:state]
-      @order.status          = options[:status]
-      @order.zip             = options[:zip]
-      @order.phone           = options[:phoneNumber]
-      @order.country         = options[:country]
-      @order.expiration      = Date.parse(options[:expiry])
-      @order.save!
-
-      @order
-    end
-  end
-
-  def self.next_order_number
-    Order.order("number DESC").limit(1).first.number.to_i + 1 if Order.count > 0
-  end
-
-  def generate_uuid!
-    self.uuid = SecureRandom.hex(16)
-  end
-
-  # Implement these three methods to
-  def self.goal
-    Settings.project_goal
-  end
-
-  def self.percent
-    (Order.current.to_f / Order.goal.to_f) * 100.to_f
-  end
-
-  # See what it looks like when you have some backers! Drop in a number instead of Order.count
-  def self.current
-    Order.count
-  end
-
-  def self.revenue
-    Order.current.to_f * Settings.price
-  end
-
-  validates_presence_of :name, :price, :user_id
 end

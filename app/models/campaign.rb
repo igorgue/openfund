@@ -19,4 +19,6 @@
 class Campaign < ActiveRecord::Base
   attr_accessible :name, :goal, :domain, :tagline, :secondary_tagline
   attr_accessible :blurb, :start_time, :show_link
+  belongs_to :user
+  # attr_accessible :title, :body
 end
