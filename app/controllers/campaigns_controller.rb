@@ -1,11 +1,9 @@
 class CampaignsController < ApplicationController
 
-  before_filter :find_campaign,       :only => [:update, :delete, :edit]
-  before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new]
+  before_filter :find_campaign,       :only => [:update, :delete, :edit, :show]
+  before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new, :create]
 
   def show
-    # get the campaign
-    @campaign = Campaign.find_by_domain!(params[:domain])
   end
 
   def new
@@ -14,6 +12,11 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new
+    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:campaign][:name]
   end
 
   def edit
@@ -23,6 +26,10 @@ class CampaignsController < ApplicationController
   end
 
   def delete
+  end
+
+  def show_by_domain
+    @campaign = Campaign.find_by_domain!(params[:domain])
   end
 
 private
