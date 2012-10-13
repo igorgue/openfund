@@ -16,4 +16,5 @@
 //= require jquery.details
 //= require jquery.textchange
 //= require preorder
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
