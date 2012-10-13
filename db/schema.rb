@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013184526) do
+ActiveRecord::Schema.define(:version => 20121013192701) do
 
   create_table "campaign_faqs", :force => true do |t|
     t.integer  "campaign_id"
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(:version => 20121013184526) do
     t.boolean  "show_link",                                       :default => true
     t.datetime "created_at",                                                        :null => false
     t.datetime "updated_at",                                                        :null => false
+  end
+
+  create_table "order_metadata", :force => true do |t|
+    t.integer  "order_id"
+    t.string   "field"
+    t.text     "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "orders", :id => false, :force => true do |t|
