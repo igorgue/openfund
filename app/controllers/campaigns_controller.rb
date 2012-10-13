@@ -12,11 +12,12 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:name]
+    @campaign.goal = params[:goal]
+    @campaign.domain = params[:domain]
+    @campaign.name = params[:name]
+    @campaign.name = params[:name]
+    @campaign.save
   end
 
   def edit
