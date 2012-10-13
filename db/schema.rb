@@ -11,49 +11,67 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013044732) do
+ActiveRecord::Schema.define(:version => 20121013055826) do
 
   create_table "campaign_faqs", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "campaign_id"
+    t.string   "question",                   :null => false
+    t.string   "answer",                     :null => false
+    t.integer  "sort_order",  :default => 0
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "campaign_levels", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "campaign_id"
+    t.string   "title",                                     :null => false
+    t.decimal  "cost",        :precision => 8, :scale => 2, :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "campaign_sections", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "campaign_id"
+    t.string   "title",                             :null => false
+    t.text     "text",                              :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "sort_order",         :default => 0
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   create_table "campaigns", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",                                                              :null => false
+    t.decimal  "goal",              :precision => 8, :scale => 2,                   :null => false
+    t.string   "domain"
+    t.string   "tagline"
+    t.string   "secondary_tagline"
+    t.text     "blurb"
+    t.datetime "start_time"
+    t.integer  "user_id"
+    t.boolean  "show_link",                                       :default => true
+    t.datetime "created_at",                                                        :null => false
+    t.datetime "updated_at",                                                        :null => false
   end
 
   create_table "orders", :id => false, :force => true do |t|
-    t.string   "token"
-    t.string   "transaction_id"
     t.string   "address_one"
     t.string   "address_two"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.string   "country"
-    t.string   "status"
-    t.string   "number"
-    t.string   "uuid"
     t.string   "user_id"
     t.decimal  "price"
-    t.decimal  "shipping"
-    t.string   "tracking_number"
     t.string   "phone"
     t.string   "name"
-    t.date     "expiration"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "card_id"
+    t.string   "transaction_id"
   end
 
   create_table "users", :force => true do |t|
