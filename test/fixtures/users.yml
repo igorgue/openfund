@@ -15,6 +15,11 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  stripe_livemode        :boolean
+#  stripe_publishable_key :string(255)
+#  stripe_user_id         :string(255)
+#  stripe_refresh_token   :string(255)
+#  stripe_access_token    :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

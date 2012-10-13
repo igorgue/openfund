@@ -11,11 +11,11 @@
 #
 
 class CampaignLevel < ActiveRecord::Base
+  attr_accessible :campaign_id, :title, :cost
   belongs_to :campaign
   # attr_accessible :title, :body
 
   def price_to_cents
-    self.number_to_cents(@cost)
     (@cost.to_f * 100).to_i
   end
 
