@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013055826) do
+ActiveRecord::Schema.define(:version => 20121013190532) do
 
   create_table "campaign_faqs", :force => true do |t|
     t.integer  "campaign_id"
@@ -28,19 +28,21 @@ ActiveRecord::Schema.define(:version => 20121013055826) do
     t.decimal  "cost",        :precision => 8, :scale => 2, :null => false
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.text     "description"
   end
 
   create_table "campaign_sections", :force => true do |t|
     t.integer  "campaign_id"
-    t.string   "title",                             :null => false
-    t.text     "text",                              :null => false
+    t.string   "title",                                           :null => false
+    t.text     "text",                                            :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "sort_order",         :default => 0
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.integer  "sort_order",                       :default => 0
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+    t.string   "type",               :limit => 19
   end
 
   create_table "campaigns", :force => true do |t|
@@ -65,11 +67,11 @@ ActiveRecord::Schema.define(:version => 20121013055826) do
     t.string   "zip"
     t.string   "country"
     t.string   "user_id"
-    t.decimal  "price"
+    t.decimal  "price",          :precision => 10, :scale => 0
     t.string   "phone"
     t.string   "name"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
     t.string   "card_id"
     t.string   "transaction_id"
   end
@@ -80,6 +82,11 @@ ActiveRecord::Schema.define(:version => 20121013055826) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.boolean  "stripe_livemode"
+    t.string   "stripe_publishable_key"
+    t.string   "stripe_user_id"
+    t.string   "stripe_refresh_token"
+    t.string   "stripe_access_token"
     t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
