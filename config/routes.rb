@@ -11,4 +11,6 @@ Selfstarter::Application.routes.draw do
 
   match 'account'                 => 'account#index'
   match 'account/stripe-connect'  => 'account#stripe_connect'
+
+  resources :campaigns
 end

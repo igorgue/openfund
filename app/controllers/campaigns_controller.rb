@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
 
-  before_filter :authenticate_user!, :only => [:new, :update, :delete, :edit]
+  before_filter :find_campaign,       :only => [:update, :delete, :edit, :show]
+  before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new]
 
   def show
   end
@@ -19,7 +20,13 @@ class CampaignsController < ApplicationController
 
 private
 
+  def find_campaign
+    @campaign = Campaign.find_by_id(params[:id])
+    not_found if @campaign.nil?
+  end
+
   def verify_user
+    @campaign.user_id == current_user_id
   end
 
 end
