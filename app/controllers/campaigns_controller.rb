@@ -1,12 +1,22 @@
 class CampaignsController < ApplicationController
 
   before_filter :find_campaign,       :only => [:update, :delete, :edit, :show]
-  before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new]
+  before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new, :create]
 
   def show
   end
 
   def new
+    @campaign = Campaign.new
+  end
+
+  def create
+    @campaign = Campaign.new
+    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:campaign][:name]
   end
 
   def edit
@@ -25,8 +35,7 @@ class CampaignsController < ApplicationController
 private
 
   def find_campaign
-    @campaign = Campaign.find_by_id(params[:id])
-    not_found if @campaign.nil?
+    @campaign = Campaign.find(params[:id])
   end
 
   def verify_user
