@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # gem 'amazon_flex_pay' # http://i.imgur.com/hindM.jpg
 
+gem 'annotate', '2.5.0'
 gem 'devise', '2.1.2'     # Authenication, baby.
 gem 'jquery-rails'        # jQuery? What did you cal me, boy!?
 gem 'paperclip', '3.3.0'  # Attach things
