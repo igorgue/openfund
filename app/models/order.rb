@@ -37,8 +37,7 @@ class Order < ActiveRecord::Base
   def charge!
     # get the credit card details submitted by the form
     # create the charge on Stripe's servers - this will charge the user's card
-    charge = Stripe::Charge.create(
-      {
+    charge = Stripe::Charge.create({
         :amount => @campaign_level.price_to_cents, # amount in cents
         :currency => CURRENCY,
         :card => @card_id,
