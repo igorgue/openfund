@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order_id: 1
+  field: MyString
+  value: MyText
+
+two:
+  order_id: 1
+  field: MyString
+  value: MyText
