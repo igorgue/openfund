@@ -1,7 +1,9 @@
 Selfstarter::Application.routes.draw do
+  get "home/index"
+
   devise_for :users
 
-  root :to => 'preorder#index'
+  root :to => 'home#index'
   match '/preorder'               => 'preorder#index'
   get 'preorder/checkout'
   match '/preorder/share/:uuid'   => 'preorder#share', :via => :get
