@@ -11,13 +11,8 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    @campaign = Campaign.new
-    @campaign.name = params[:name]
-    @campaign.goal = params[:goal]
-    @campaign.domain = params[:domain]
-    @campaign.start_time  = Time.zone.parse("#{params[:date]} #{params[:time]}")
-    @campaign.user_id = current_user.id
-    @campaign.save
+    params[:start_time] = Time.zone.parse("#{params[:campaign].delete(:date)} #{params[:campaign].delete(:time)}")
+    @campaign = Campaign.create(params[:campaign])
   end
 
   def edit
