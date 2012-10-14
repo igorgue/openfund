@@ -20,6 +20,8 @@ Selfstarter::Application.routes.draw do
   #match '/preorder/prefill'       => 'preorder#prefill'
   #match '/preorder/postfill'      => 'preorder#postfill'
 
+  match 'campaigns/add-faq'       => 'campaigns#add_faq', :via => :post
+
   match 'account'                 => 'account#index'
   match 'account/stripe-connect'  => 'account#stripe_connect'
   match 'account/stripe-error'    => 'account#stripe_error'

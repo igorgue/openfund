@@ -77,10 +77,16 @@ $(document).ready(function() {
 
   $('a.add_faq').click(function(e) {
     e.preventDefault();
-    var content = $(this).text();
-    $('#add_faq input[type="text"]').value("");
+    $("#add_faq input[type='text']").val("");
     $('#add_faq textarea').text("");
     $('#add_faq').modal();
+  });
+
+  $('a.add_section').click(function(e) {
+    e.preventDefault();
+    $("#add_section input[type='text']").val("");
+    $('#add_section textarea').text("");
+    $('#add_section').modal();
   });
   
   

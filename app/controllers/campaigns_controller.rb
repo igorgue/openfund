@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
 
-  before_filter :find_campaign,       :only => [:update, :delete, :edit, :show]
+  before_filter :find_campaign,       :only => [:update, :delete, :edit, :show, :add_faq]
   before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new, :create]
 
 
@@ -54,7 +54,7 @@ class CampaignsController < ApplicationController
   end
 
   def add_level
-    @level = @campaign.levels.build(:title => params[:title], :description => params[:desciption], :cost => params[:cost].to_f).save
+    @level = @campaign.levels.build(:title => params[:title], :description => params[:description], :cost => params[:cost].to_f).save
     respond_to do |format|
       format.js
     end
