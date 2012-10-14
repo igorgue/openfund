@@ -17,12 +17,14 @@
 #  transaction_id    :string(255)
 #  email             :string(255)
 #  campaign_level_id :integer
+#  campaign_id       :integer
 #
 
-require 'stripe'
+# require 'stripe'
 
 class Order < ActiveRecord::Base
   belongs_to :campaign_level
+  belongs_to :campaign
   attr_accessible :address_one, :address_two, :city, :state, :zip, :country, :name, :price, :phone, :card_id, :email, :transaction_id, :level_id
   validates_presence_of :name, :email, :price, :card_id, :campaign_level_id
 

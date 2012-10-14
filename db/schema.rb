@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014060159) do
+ActiveRecord::Schema.define(:version => 20121014170656) do
 
   create_table "campaign_faqs", :force => true do |t|
     t.integer  "campaign_id"
@@ -84,7 +84,10 @@ ActiveRecord::Schema.define(:version => 20121014060159) do
     t.string   "transaction_id"
     t.string   "email"
     t.integer  "campaign_level_id"
+    t.integer  "campaign_id"
   end
+
+  add_index "orders", ["campaign_id"], :name => "index_orders_on_campaign_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

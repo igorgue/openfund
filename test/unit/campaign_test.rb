@@ -14,6 +14,7 @@
 #  show_link         :boolean          default(TRUE)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  video             :text
 #
 
 require 'test_helper'

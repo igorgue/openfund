@@ -1,1 +1,24 @@
-Code: <%= @code %> [index]
+<div class="container">
+  Code: <%= @code %> [index]
+  <h1>My Campaigns</h1>
+  <% unless @campaigns.blank? %>
+    <table class="table table-hover table-click">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col"># of Donations</th>
+          <th scope="col">Goal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @campaigns.each do |campaign| %>
+          <tr id="campaign-<%= campaign.id %>" style="cursor:pointer">
+            <td><%= campaign.name %></td>
+            <td><%= campaign.orders.size %></td>
+            <td><%= number_to_currency(campaign.goal) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
