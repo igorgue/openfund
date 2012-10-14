@@ -58,7 +58,6 @@ $(function () {
   $('div.orientation_toggle button').click(function() {
     
     var orientation = $(this).data('orientation');
-    console.log(orientation);
     
     if( orientation == 'landscape' )
       $('#finalize .active').addClass('landscape');
@@ -66,6 +65,22 @@ $(function () {
       $('#finalize .active').removeClass('landscape');
     
   });
+  
+  /** WEB PREVIEW **/
+  $('div.edit_content').click(function() {
+    var content = $(this).text();
+    $('#edit_blurb').find('textarea#blurb').text(content)
+    $('#edit_blurb').modal();
+  });
+  
+  $('span.edit_number').popover({
+    trigger: 'click',
+    title: 'Edit Goal',
+    content: '<div class="input-append"><input type="text" id="goal" class="span2" /><button class="btn btn-primary" type="button">Save</button></div>'
+  });
+  
+  
+  
   
   
 });
