@@ -13,6 +13,7 @@ gem 'rails_config'        # Real talk: https://github.com/railsjedi/rails_config
 gem 'curb'							  # Short & curlies
 gem 'json'							  # Friday the 13th?
 gem 'mysql2'
+gem 'stripe'
 
 group :production do
   gem 'unicorn'
