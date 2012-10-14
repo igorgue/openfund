@@ -4,6 +4,7 @@
 </div>
 
 <a class="btn btn-primary add_faq">Add FAQ</a>
+<a class="btn btn-primary add_section">Add Section</a>
 
 <div id="web_preview">
 
@@ -206,17 +207,22 @@
 </div>
 
 <div id="add_faq" class="modal hide fade">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>New FAQ</h3>
-  </div>
-  <div class="modal-body">
-    <input type="hidden" name="id" id="id" value="<%= @campaign.id %>" />
-    <textarea name="faq" id="faq" rows="8" class="faq_box input-xlarge"></textarea>
-  </div>
-  <div class="modal-footer">
-    <button href="#" class="btn btn-primary save" type="submit">Save</button>
-  </div>
+    <%= form_for :campaign_faq, :remote => true, :url => "/campaigns/add-faq" do |f| %>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>New FAQ</h3>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" name="id" id="id" value="<%= @campaign.id %>" />
+      <label for="question">Question</label>
+      <input name="question" id="question" type="text" />
+      <label for="question">Answer</label>
+      <textarea name="answer" id="answer" rows="8" class="input-xlarge"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button href="#" class="btn btn-primary save" type="submit">Save</button>
+    </div>
+    <% end %>
 </div>
 
 <div id="add_level" class="modal hide fade">
