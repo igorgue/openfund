@@ -97,8 +97,7 @@
 
 </div>
 
-
-
+<% if !current_user.stripe_access_token? %>
 
 <div class="modal" id="stripe_request">
   <div class="modal-body centered">
@@ -109,3 +108,5 @@
     <br/>
   </div>
 </div>
+
+<% end %>

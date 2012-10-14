@@ -1,15 +1,8 @@
 $(function () {
   
-  
-  /* Does the seller need to connect to stripe */
-  if( need_stripe_credentials == true ) {
-  
-    $('#stripe_request').modal({
-      backdrop: 'static',
-    }).show();
-  
-  }
-  
+  $('#stripe_request').modal({
+    backdrop: 'static',
+  })
   
   /* Small plugins on the settings form */
   $('input[rel="popover"]').popover({
