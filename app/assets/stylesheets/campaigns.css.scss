@@ -245,7 +245,7 @@ div.web_view .canvas iframe {
 
 div.tablet_view {
   width: 530px; height: 688px;
-  background: url(../img/ipad.png) no-repeat top left;
+  background: url(/images/ipad.png) no-repeat top left;
   position: relative;
   /*-webkit-transition: -webkit-transform 1s linear, margin-top 1s linear;*/
 }
@@ -267,7 +267,7 @@ div.tablet_view .canvas iframe {
 }
 div.mobile_view {
   width: 338px; height: 688px;
-  background: url(../img/iphone.png) no-repeat top center;
+  background: url(/images/iphone.png) no-repeat top center;
   position: relative;
   margin: 0 auto;
 }
@@ -324,4 +324,8 @@ iframe { border: 0}
   background-repeat: no-repeat;
   text-indent: -9999px !important;
   color: transparent;
+}
+
+textarea.blurb_box {
+  width: 515px;
 }
