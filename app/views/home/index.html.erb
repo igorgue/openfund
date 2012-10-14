@@ -4,7 +4,7 @@
 	<div id="home-hero">
 		<h1>Create Your Own Private Label Crowdfunding Website</h1>
 		<h3 style="">Free to try. Simple to setup. All on your own domain.</h3>
-		<a href="#login_screen" class="btn btn-large btn-primary" id="go-button" data-toggle="modal">Get started on your campaign!</a>
+		<a href="#register_screen" class="btn btn-large btn-primary" id="go-button" data-toggle="modal">Get started on your campaign!</a>
 	</div>
 
 
@@ -82,7 +82,7 @@
 	<div class="row">
 		<div class="centered">
 			<h1 class="pitch-title">What are you waiting for?</h1>
-			<a href="#login_screen" class="btn btn-large btn-primary" id="go-button" data-toggle="modal">Create my OpenFund site!</a>
+			<a href="#register_screen" class="btn btn-large btn-primary" id="go-button" data-toggle="modal">Create my OpenFund site!</a>
 		</div>
 	</div>
 
@@ -94,12 +94,21 @@
 
 </div> <!-- end of .container-->
 
-<div class="modal hide" id="login_screen" style="width: 254px !important; margin-left: -127px;">
+<div class="modal hide" id="register_screen" style="width: 254px !important; margin-left: -127px;">
 	<div class="modal-header">
 	  <h3 id="myModalLabel">Let's get started...</h3>
 	</div>
 	<div class="modal-body">
 		<p style="font-size: 12px;">You're less than 5 minutes from a preview of your first campaign!</p>
 	  <%= render :partial => "devise/registrations/form" %>
+	</div>
+</div>
+
+<div class="modal hide" id="login_screen" style="width: 254px !important; margin-left: -127px;">
+	<div class="modal-header">
+	  <h3 id="myModalLabel">Log In</h3>
+	</div>
+	<div class="modal-body">
+	  <%= render :partial => "devise/sessions/new" %>
 	</div>
 </div>
