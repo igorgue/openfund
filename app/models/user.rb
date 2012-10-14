@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
   attr_accessible :stripe_livemode, :stripe_publishable_key, :stripe_user_id, 
   								:stripe_refresh_token, :stripe_access_token
   has_many :orders
+  has_many :campaigns
 
   def connect_with_stripe(params)
     http = Curl.post("https://connect.stripe.com/oauth/token", params) do |http|
