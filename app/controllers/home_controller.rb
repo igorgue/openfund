@@ -13,6 +13,15 @@ class HomeController < ApplicationController
     @random_campaign = Campaign.randy
   end
 
+  def checkout
+    host = request.headers['host']
+    @level = CampaignLevel.find( 
+      :conditions => { 
+        :campaigns => {:domain => host}
+      }
+    )
+  end
+
   def client_domain
     host = request.headers['host']
     local_domains = Selfstarter::Application::LOCAL_DOMAINS

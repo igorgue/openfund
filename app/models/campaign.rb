@@ -24,8 +24,10 @@ class Campaign < ActiveRecord::Base
   attr_reader     :date, :time
   attr_writer     :date, :time
   
-  belongs_to      :user
-  has_many        :orders
+  belongs_to  :user
+  has_many    :orders
+  has_many    :levels,    :class_name => "CampaignLevel"
+  has_many    :sections,  :class_name => "CampaignSection"
   
   validates_uniqueness_of :domain
 
