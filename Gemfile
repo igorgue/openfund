@@ -5,19 +5,15 @@ source 'https://rubygems.org'
 
 gem 'annotate', '2.5.0'   # What's under the table?
 gem 'devise', '2.1.2'     # Who dat!?
-gem 'formtastic', '2.2.1' # Semantic forms? Yea, talk dirty to me!
+gem 'formtastic-bootstrap'# Semantic forms? Yea, talk dirty to me!
 gem 'jquery-rails'        # What did you call me, boy!?
 gem 'paperclip', '3.3.0'  # I can has?
 gem 'rails', '3.2.8'      # Kinda like django...
 gem 'rails_config'        # Real talk: https://github.com/railsjedi/rails_config
-
-group :development do
-  gem 'mysql2'
-end
+gem 'mysql2'
 
 group :production do
-  gem 'thin'
-  gem 'pg'
+  gem 'unicorn'
 end
 
 # Gems used only for assets and not required

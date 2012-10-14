@@ -13,7 +13,7 @@ module Selfstarter
     CURRENCY = 'usd'
 
     # --- Standard Rails Config ---
-    config.time_zone = 'Pacific Time (US & Canada)'
+    config.time_zone = 'Eastern Time (US & Canada)'
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.active_record.whitelist_attributes = true

@@ -12,11 +12,12 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
+    @campaign.name = params[:name]
+    @campaign.goal = params[:goal]
+    @campaign.domain = params[:domain]
+    @campaign.start_time  = Time.zone.parse("#{params[:date]} #{params[:time]}")
+    @campaign.user_id = current_user.id
+    @campaign.save
   end
 
   def edit
@@ -39,7 +40,7 @@ private
   end
 
   def verify_user
-    @campaign.user_id == current_user_id
+    @campaign.user_id == current_user.id
   end
 
 end
