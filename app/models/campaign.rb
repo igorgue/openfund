@@ -73,9 +73,4 @@ class Campaign < ActiveRecord::Base
   def current_funds
     0.0
   end
-
-  def levels
-    #raise "#{CampaignLevel.where :campaign_id => @id}"
-    CampaignLevel.where :campaign_id => @id
-  end
 end
