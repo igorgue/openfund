@@ -83,6 +83,13 @@ $(document).ready(function() {
     $('#edit_blurb').modal('hide');
     
   });
+
+  $('a.add_faq').click(function(e) {
+    e.preventDefault();
+    var content = $(this).text();
+    $('#add_faq').find('textarea#blurb').text($.trim(content))
+    $('#add_faq').modal();
+  });
   
   
   $('span.edit_number').popover({
