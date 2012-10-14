@@ -2,7 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def after_sign_in_path_for(resource)
-		account_path
+    
+    if current_user.campaigns.count > 0 
+      campaign_orders_path(:campaign_id => current_user.campaigns.first.id)
+    else
+		  new_campaign
+		end
+		
   end
 
   def not_found

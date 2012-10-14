@@ -1,4 +1,6 @@
 Selfstarter::Application.routes.draw do
+  get "orders/index"
+
   get "order/show"
 
   get "home/index"
