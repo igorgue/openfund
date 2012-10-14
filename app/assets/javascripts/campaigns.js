@@ -16,6 +16,10 @@ $(function () {
     placement: 'right',
     trigger: 'focus'
   })
+  $('input[rel="tooltip"]').tooltip({
+    placement: 'right',
+    trigger: 'focus'
+  })
   $('a[rel="popover"]').popover({
     placement: 'right',
     trigger: 'hover'

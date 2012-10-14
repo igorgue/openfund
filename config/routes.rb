@@ -4,7 +4,8 @@ Selfstarter::Application.routes.draw do
   devise_for :users
 
   root :to => 'home#index'
-  match '/d/:domain' => 'campaigns#show_by_domain', :constraints  => {:domain => /[0-z\.]+/}
+  resources :campaigns, :except => :show
+  # match '/d/:domain' => 'campaigns#show_by_domain', :constraints  => {:domain => /[0-z\.]+/}
   #root :to => 'preorder#index'
   #match '/preorder'               => 'preorder#index'
   #get 'preorder/checkout'
@@ -17,5 +18,4 @@ Selfstarter::Application.routes.draw do
   match 'account/stripe-connect'  => 'account#stripe_connect'
   match 'account/stripe-error'    => 'account#stripe_error'
 
-  resources :campaigns
 end

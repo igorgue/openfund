@@ -1,7 +1,13 @@
 class CampaignsController < ApplicationController
 
-  before_filter :find_campaign,       :only => [:update, :delete, :edit, :show]
+  # before_filter :find_campaign,       :only => [:update, :delete, :edit, :show]
   before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new, :create]
+
+
+
+  def index
+    @campaigns = current_user.campaigns
+  end
 
   def show
   end
@@ -13,6 +19,10 @@ class CampaignsController < ApplicationController
   def create
     params[:start_time] = Time.zone.parse("#{params[:campaign].delete(:date)} #{params[:campaign].delete(:time)}")
     @campaign = Campaign.create(params[:campaign])
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
 
   def edit

@@ -18,8 +18,11 @@
 
 class Campaign < ActiveRecord::Base
   attr_accessible :name, :goal, :domain, :tagline, :secondary_tagline, 
-  								:blurb, :video, :start_time, :show_link, :user
-  belongs_to :user
+  								:blurb, :video, :start_time, :show_link, :user, :date
+  attr_reader     :date, :time
+  attr_writer     :date, :time
+  belongs_to      :user
+  
   validates_uniqueness_of :domain
-  # attr_accessible :title, :body
+  
 end
