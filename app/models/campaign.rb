@@ -14,15 +14,23 @@
 #  show_link         :boolean          default(TRUE)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  video             :text
 #
 
 class Campaign < ActiveRecord::Base
   attr_accessible :name, :goal, :domain, :tagline, :secondary_tagline, 
   								:blurb, :video, :start_time, :show_link, :user, :date
+  
   attr_reader     :date, :time
   attr_writer     :date, :time
+  
   belongs_to      :user
+  has_many        :orders
   
   validates_uniqueness_of :domain
+
+  def active?
+    start_time.present? and start_time <= Time.zone.now and (start_time + 30.days) >= Time.zone.now
+  end
   
 end

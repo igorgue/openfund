@@ -1,6 +1,7 @@
 <% @campaign.date ||= (Time.zone.now.midnight + 1.day).to_date %>
+<% remote_update = @campaign.id.present? %>
 
-<%= form_for(@campaign, :remote => true, :html => { :class => "form form-horizontal", :id => "settings" }) do |f| %>
+<%= form_for(@campaign, :remote => remote_update, :html => { :class => "form form-horizontal", :id => "settings" }) do |f| %>
 
   <legend>Please edit your campaign settings</legend>
 
