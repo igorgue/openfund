@@ -2,16 +2,22 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def after_sign_in_path_for(resource)
-    
-    if current_user.campaigns.count > 0 
-      campaign_orders_path(:campaign_id => current_user.campaigns.first.id)
-    else
-		  new_campaign_path
-		end
-		
+    sign_in_redirect_path
   end
 
   def not_found
     raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def sign_in_redirect_path
+
+    if current_user.campaings.blank?
+      new_campaign
+    elsif current_user.campaigns.count == 1 
+      campaign_orders_path(:campaign_id => current_user.campaigns.first.id)
+    else
+      account_index
+    end
+
   end
 end

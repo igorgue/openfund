@@ -29,8 +29,20 @@ class Campaign < ActiveRecord::Base
   
   validates_uniqueness_of :domain
 
+  def current_funds
+    0.0
+  end
+
   def active?
     start_time.present? and start_time <= Time.zone.now and (start_time + 30.days) >= Time.zone.now
+  end
+
+  def end_time
+    start_time.present? ? start_time + 30.days : Time.zone.now
+  end
+
+  def days_left
+    (Time.zone.now.to_date - (Time.zone.now + 5.days).to_date).to_i + 1
   end
 
   def full_domain
@@ -50,5 +62,12 @@ class Campaign < ActiveRecord::Base
       )
     end
   end
-  
+
+  def backers
+    0
+  end
+
+  def days_left
+    0
+  end
 end

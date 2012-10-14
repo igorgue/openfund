@@ -30,30 +30,31 @@ body {
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="span9 offset2" id="headline">
-      <h1><%= @campaign.name %></h1>
+      <h1><%= @domain_campaign.name %></h1>
     </div>
   </div>
 </div> 
 
-<div id="title"><h3><%= @campaign.tagline %></h3><%= image_tag 'pocket-shadow.png' %></div>
+<div id="title"><h3><%= @domain_campaign.tagline %></h3><%= image_tag 'pocket-shadow.png' %></div>
 <div id="mainbox">
   <div class="container">
     <div class="row" id="meatPotatos">
       <div class="span10 offset1">
         <div class="span5" id="video">
-          <iframe src="http://player.vimeo.com/video/41261299?title=1&amp;byline=1&amp;portrait=1" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+          <%#<iframe src="http://player.vimeo.com/video/41261299?title=1&amp;byline=1&amp;portrait=1" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> %>
+          <iframe width="470" height="350" src="http://www.youtube.com/embed/ApUln7AD0_Q" frameborder="0" allowfullscreen></iframe>
         </div>           
         <div class="span5" id="statbox">
           <div class="span1" id="stats">
-            <h3>N/A</h3>
+            <h3><%= @domain_campaign.backers %></h3>
             <p class="muted">Backers</p>
           </div>
           <div class="span2" id="stats" >
-            <h3>350,000$</h3>
-            <p class="muted">Of 2000$</p>
+            <h3><%= number_to_currency(@domain_campaign.current_funds) %></h3>
+            <p class="muted">Of <%= number_to_currency(@domain_campaign.goal) %></p>
           </div>
           <div class="span1" id="stats">
-            <h3>N/A</h3>
+            <h3><%= @domain_campaign.days_left %></h3>
             <p class="muted">Days left</p>
           </div>  
           <div class="span4">
