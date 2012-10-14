@@ -1,0 +1,11 @@
+<% if @domain_campaign %>
+  <% @domain_campaign.faqs.each do |question| %>
+	<li><h4 class="muted lead "><%= question.question %></h4></li>
+	<li><p class="text-success"><%= question.answer %></p></li>
+  <% end %>
+<% else %>
+  <% @campaign.faqs.each do |question| %>
+	<li><h4 class="muted lead "><%= question.question %></h4></li>
+	<li><p class="text-success"><%= question.answer %></p></li>
+  <% end %>
+<% end %>
