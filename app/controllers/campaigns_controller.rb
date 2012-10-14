@@ -61,9 +61,17 @@ class CampaignsController < ApplicationController
   end
 
   def add_faq
+    @level = @campaign.faqs.build(:question => params[:question], :answer => params[:answer]).save
+    respond_to do |format|
+      format.js
+    end
   end
 
   def add_section
+    @level = @campaign.sections.build(:title => params[:title], :text => params[:text]).save
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update_blurb
