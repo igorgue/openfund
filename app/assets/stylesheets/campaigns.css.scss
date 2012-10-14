@@ -284,9 +284,32 @@ a.stripe_connect {
   display: block;
   text-align: left;
   text-indent: -9999px;
-  
-  
   float: right;
-  
 }
 iframe { border: 0}
+
+
+/** WEB PREVIEW **/
+
+#web_preview {background-image: url('img/straws.png');background-repeat: repeat; margin:0;}
+#web_preview #mainbox{background-color: rgba(0, 0, 0, 0.1);}
+#web_preview #meatpotatos {background-color:black; }
+#web_preview .navbar-inner{color:white;background-color: rgba(57, 255, 255, 0.3);font-family: 'Signika Negative', sans-serif;}
+#web_preview #statbox{margin-left: 0px}
+#web_preview #headline {text-align: center;}
+#web_preview .row{word-wrap:break-word;}
+#web_preview #video iframe{padding-top:5px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
+#web_preview .progress{height: 35px;}
+#web_preview .progress h3 {margin-top: 0px;}
+#web_preview #title{text-align: center;font-family: 'Signika Negative', sans-serif;}
+#web_preview #title h3{font-size: 23px; line-height: 100%;margin-bottom: -13px;}
+#web_preview #blerb {word-wrap:break-word;overflow: hidden;}
+#web_preview #image {width:370px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
+#web_preview #imageborder img{bottom:0;width:370px; bottom:-32px;}
+#web_preview #imageborder{overflow: hidden;}
+#web_preview #border img{}
+#web_preview #levels{word-wrap:break-word;}
+
+
+
+

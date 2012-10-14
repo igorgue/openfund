@@ -27,332 +27,82 @@
       <div class="tab-content">
         
         <div class="tab-pane active" id="settings">
-          
-          
-          <form class="form form-horizontal">
-            <legend>Please edit your campaign settings</legend>
 
-            <div class="control-group">
-              <label class="control-label" for="name">Name</label>
-              <div class="controls">
-                <input type="text" name="name" id="name" />
-              </div>
-            </div>
-
-            <div class="control-group">
-              <label class="control-label" for="name">Goal</label>
-              <div class="controls">
-                <div class="input-prepend">
-                  <span class="add-on">$</span><input type="text" name="name" class="input-medium" id="name" placeholder="$100 - $30,000" rel="popover" data-title="Need help?" data-content="kasjdk jasjdk jasdjja sjdjsakdasdsa" />
-                </div>
-              </div>
-            </div>
-
-            <div class="control-group">
-              <label class="control-label" for="name">Domain</label>
-              <div class="controls">
-                <input type="text" name="name" id="name" rel="popover" data-title="Need help?" data-content="kasjdk jasjdk jasdjja sjdjsakdasdsa" />
-              </div>
-            </div>
-
-            <div class="control-group">
-              <label class="control-label" for="name">Video</label>
-              <div class="controls">
-                <input type="text" name="name" id="name" placeholder="Youtube or Vimeo URL" rel="popover" data-title="Need help?" data-content="kasjdk jasjdk jasdjja sjdjsakdasdsa" />
-              </div>
-            </div>
-
-            <div class="control-group">
-              <label class="control-label" for="name">Start Date/Time</label>
-              <div class="controls">
-                <input type="text" name="name" id="name" class="input-small" data-datepicker="datepicker" />
-                <div class="input-append bootstrap-timepicker-component">
-                  <input type="text" class="timepicker-default input-small" />
-                  <span class="add-on">
-                      <i class="icon-time"></i>
-                  </span>
-                </div>
-                <span class="help-inline">Your campaign ends 30 days after the start date.</span>
-              </div>
-            </div>
-            
-            <div class="control-group">
-              <label class="control-label" for="timezone">Timezone</label>
-              <div class="controls">
-                <select name="timezone" id="timezone" class="input-xxlarge">
-                    <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
-                    <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
-                    <option value="-10.0">(GMT -10:00) Hawaii</option>
-                    <option value="-9.0">(GMT -9:00) Alaska</option>
-                    <option value="-8.0">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
-                    <option value="-7.0">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
-                    <option value="-6.0">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
-                    <option value="-5.0" selected>(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
-                    <option value="-4.0">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
-                    <option value="-3.5">(GMT -3:30) Newfoundland</option>
-                    <option value="-3.0">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
-                    <option value="-2.0">(GMT -2:00) Mid-Atlantic</option>
-                    <option value="-1.0">(GMT -1:00 hour) Azores, Cape Verde Islands</option>
-                    <option value="0.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
-                    <option value="1.0">(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
-                    <option value="2.0">(GMT +2:00) Kaliningrad, South Africa</option>
-                    <option value="3.0">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
-                    <option value="3.5">(GMT +3:30) Tehran</option>
-                    <option value="4.0">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
-                    <option value="4.5">(GMT +4:30) Kabul</option>
-                    <option value="5.0">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
-                    <option value="5.5">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
-                    <option value="5.75">(GMT +5:45) Kathmandu</option>
-                    <option value="6.0">(GMT +6:00) Almaty, Dhaka, Colombo</option>
-                    <option value="7.0">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
-                    <option value="8.0">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
-                    <option value="9.0">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
-                    <option value="9.5">(GMT +9:30) Adelaide, Darwin</option>
-                    <option value="10.0">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
-                    <option value="11.0">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
-                    <option value="12.0">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
-                  </select>
-              </div>
-            </div>
-            
-            <div class="control-group">
-              <label class="control-label" for="name">Show our ad</label>
-              <div class="controls">
-                <label class="checkbox">
-                  <input type="checkbox" checked />
-                  <a href="#" rel="popover" data-title="Need help?" data-content="kasjdk jasjdk jasdjja sjdjsakdasdsa"><i class="icon-question-sign"></i></a>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Save & Continue to Step 2</button>
-            </div>
-
-          </form>
-          
+          <%= render :partial => 'campaigns/forms/settings' %>
           
         </div>
         <div class="tab-pane" id="preview">
           
           <div class="well clearfix">
             <p class="pull-left">You can tweak this page by clicking the elements on the page</p>
-            <a href="#" class="btn btn-primary pull-right">Save & Continue to Step 3</a>
+            <a href="#" class="btn btn-primary pull-right">Save &amp; Continue to Step 3</a>
           </div>
           
           <div id="web_preview">
 
-            	<div id="header">
-              <div class="wrapper clearfix">
-                <h1 id="lockitron_header"><a href="/">Selfstarter</a></h1>
+            <div class="navbar navbar-inverse">
+              <div class="navbar-inner">
+                <div class="span12 offset1" id="headline">
+                  <h1>OpenFund.co</h1>
+                </div>
               </div>
+            </div> 
+
+            <div id="title">
+              <h3>A Tool for Crowd Funding!</h3>
+              <img src="/images/pocket-shadow.png" >
             </div>
-            	<div class="gray_background">
-              <div class="wrapper center">
-              <h2>Roll your own crowdfunding</h2>
-            </div>
-              <div class="wrapper clearfix">
-              <div id="video">
-                <!--iframe width='512' height='385' src="https://www.youtube.com/v/D1L3o88GKew?autohide=1&showinfo=0&rel=0&autoplay=0"></iframe-->
-              </div>
-
-              <div id="backing">
-                <ul>
-                  <li class="stats" id="backers">
-                    N/A
-                    <span>backers</span>
-                  </li>
-                  <li class="stats">
-                    N/A
-                    <span>of $1,995</span>
-                  </li>
-
-                    <li class="stats" id="days">
-                        &infin;
-                        <span>days left</span>
-                      </li>
-                </ul>
-
-                  <div id='progress_bg' class='small'>
-                    <div id='progress' class='' style='width: 100%;'>
-                    </div>
+            
+            <div id="mainbox">
+              <div class="container">
+                <div class="row" id="meatPotatos">
+                  <div class="span10 offset1">
+                    <div class="span5" id="video">
+                      <iframe src="http://player.vimeo.com/video/41261299?title=1&amp;byline=1&amp;portrait=1" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+                    </div>           
+                    <div class="span5" id="statbox">
+                      <div class="span1" id="stats1">
+                        <h3>N/A</h3>
+                        <p class="muted">Backers</p>
+                      </div>
+                      <div class="span2" id="stats2" >
+                        <h3>$0</h3>
+                        <p class="muted">Of $20,000</p>
+                      </div>
+                      <div class="span1" id="stats3">
+                        <h3>N/A</h3>
+                        <p class="muted">Days left</p>
+                      </div>  
+                      <div class="span4">
+                        <div class="progress">
+                          <div class="bar bar-success" style="width: 0%;"></div>
+                          <h3>0%</h3>
+                        </div>
+                      </div>
+                      <div class="span4" id="blerb">
+                        <h3>Blerb</h3>
+                        <p>blerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
+                      </div>
+                    </div>                     
                   </div>
-
-                <div id="reserve_container">
-                  <p id="ship_date">Code Available on GitHub</p>
-                  <a href="https://github.com/lockitron/selfstarter" class="blue_button reserve">Fork Now</a>
-                  <p id="price">Free and Open Source</p>
-                  <p>You&#x27;ll get this exact site. All you&#x27;ll need to get started is a great product.</p>
-                  <div class="fb-like" data-send="false" data-width="70" data-layout="box_count" data-show-faces="true"></div>
                 </div>
+              </div><!-- /container --> 
+              <hr>
+            </div><!--/mainbox-->
+            <!--Start Sections--> 
 
-              </div>
 
-            </div>
-            </div>  
-            <div class="big_wrapper">
-              <div class="wrapper" id="one">
-                <div class="point_copy">
-                  <h3>
-                    What is Selfstarter?
-                  </h3>
-                  <p>
-                    Selfstarter is an open source starting point for building your own ad-hoc crowdfunding site. It was put together by <a href="https://lockitron.com">Lockitron</a> after they were <a href="http://techcrunch.com/2012/10/07/the-story-of-lockitron-crowdfunding-without-kickstarter/">turned down from Kickstarter</a>.
-                  <p>
+            <!--/Sections-->
+            
+            <div class="container"><!--Start Footer-->
+              <div class="row">
+                <div class="span10  offset1">
+                  <footer>
+                    <p><i class="icon-globe"></i>Powered By: OpenFund.co </p>
+                  </footer>    
                 </div>
               </div>
-            </div>
-
-            <div class="big_wrapper">
-              <div class="wrapper" id="two">
-                <div class="point_copy right">
-                  <h3>
-                    How do I use it?
-                  </h3>
-                  <p>
-                    Selftstarter is a starting point for you to build your own solution. It is set up to collect reservations using Amazon Payments, but you can choose you own provider too.
-                  <p>
-                </div>
-              </div>
-            </div>
-
-            <div class="big_wrapper">
-              <div class="wrapper" id="three">
-                <div class="point_copy">
-                  <h3>
-                    It's just a skeleton
-                  </h3>
-                  <p>
-                    We've kept Selfstarter really simple, but that also means that you should beef it up with your own authentication, administration and product management code.
-                  <p>
-                </div>
-              </div>
-            </div>
-
-            <div class="big_wrapper">
-              <div class="wrapper" id="four">
-                <div class="point_copy right">
-                  <h3>
-                    Let's get started
-                  </h3>
-                  <p>
-                    Most of what you need to get started is in the Readme. Selfstarter is based on Ruby on Rails, and we've tried to break up all of the different parts in a sensible fashion.
-                  <p>
-                </div>
-              </div>
-            </div>
-            <div class="gray_background">
-              <ul class="wrapper clearfix" id="other_points">
-                <li id="section-1">
-                  <h4>Section 1</h4>
-                  <p>Morbi tempus dapibus egestas. Nullam accumsan dolor ut purus ornare congue. Phasellus ac commodo neque. Quisque non ligula lacus, id hendrerit eros.</p>
-                </li>
-                <li id="section-2">
-                  <h4>Section 2</h4>
-                  <p>Vivamus nec posuere mauris. Suspendisse mi sem, egestas ac tristique ac, varius ac lectus. Sed porttitor dolor adipiscing mauris sagittis.</p>
-                </li>
-                <li id="section-3">
-                  <h4>Section 3</h4>
-                  <p>Curabitur dolor elit, placerat et malesuada et, tristique vel nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                </li>
-                <li id="section-4">
-                  <h4>Section 4</h4>
-                  <p>Curabitur ac mi elit, nec tempor odio. Nam sollicitudin, sapien sit amet elementum pretium, turpis mi fermentum nisl, ac vehicula purus lacus non velit.</p>
-                </li>
-              </ul>
-            </div>
-            <div class="big_wrapper">
-              <div class="wrapper center" id="middle_reserve">
-                <h2>Code Available on GitHub</h2>
-                <a href="https://github.com/lockitron/selfstarter" class="blue_button reserve">Fork Now</a>
-              </div>
-            </div>  
-            <div class="gray_background" id="faqs">
-                <div class="wrapper clearfix">
-                  <h4>Frequently Asked Questions</h4>
-                    <ul>
-                      <li class=''>
-                        <details class=''>
-                          <summary class=''>How do I setup Amazon Payments?</summary>
-                          <p>You'll need to <a href="https://payments.amazon.com/sdui/sdui/accountstatus">create an Amazon Seller Central account</a>. Afterwards, get your access key and secret key from the "Integration" tab on your AWS account. <a href="https://payments.amazon.com/sdui/sdui/helpTab/Checkout-by-Amazon/Advanced-Integration-Help/Using-Your-Access-Key">Click here for more info</a>.
-                            <br />
-                            <br />
-                            Once you have your access key and secret key, head over to <code>config/settings.yml</code>. Change <code>amazon_access_key</code> and <code>amazon_secret_key</code> appropriately.</p>
-                        </details>
-                      </li>
-                      <li>
-                        <details class=''>
-                          <summary>Can I use another payments provider?</summary>
-                          <p>Of course. We haven't built in support for other providers, but we recommend that you take a look at <a href="https://stripe.com">Stripe</a> or <a href="https://wepay.com">WePay</a>.</p>
-                        </details>
-                      </li>
-                      <li>
-                        <details class=''>
-                          <summary>How do I edit the FAQ?</summary>
-                          <p>The faq is a partial located in <code>app/views/preorder/homepage/_faq.html.erb</code> The <code>summary</code> tag is the title, the <code>p</code> is the body. Make sure to add an <code>li</code> tag for each FAQ entry.</p>
-                        </details>
-                      </li>
-                      <li>
-                        <details class=''>
-                          <summary>How do I change around the images, product name, etc?</summary>
-                          <p>The best way is in <code>config/settings.yml</code>. It has variables for several different parts, the YouTube video, the product name, the call to action button ("Fork Now"), and several more.
-                          </p>
-                        </details>
-                      </li>
-                    </ul>
-                    <ul class='col2'>
-                      <li>
-                        <details class=''>
-                          <summary>How do I change the CSS?</summary>
-                          <p>Head over to <code>app/assets/stylesheets/variables.css.scss</code>. It makes it easy to change around the elements used throughout the HTML.
-                          <br />
-                          <br />
-                          Alternatively, you can dive right into the CSS, have a look at <code>app/assets/stylesheets/main.css.scss</code>.</p>
-                        </details>
-                      </li> 
-                     <li class=''>
-                        <details class=''>
-                          <summary>Why did you release this?</summary>
-                          <p>Hardware startups are less welcome on Kickstarter than they were 6 months ago. We needed to roll our own kickstarter, so we did. Other hardware startups probably will too, so we made it easier for them by open sourcing our way of doing it.</p>
-                        </details>
-                      </li>
-                      <li class=''>
-                        <details class=''>
-                          <summary class=''>What software stack does this use?</summary>
-                          <p>It's a Ruby on Rails app that makes heavy use of SCSS, Kickstarter's wonderful <code>amazon_flex_pay</code> gem, and a hint of CoffeeScript.</p>
-                        </details>
-                      </li>
-                      <li class=''>
-                        <details class=''>
-                          <summary class=''>How do I deploy it?</summary>
-                          <p>We recommend using Heroku. We include a Procfile for you, so all you need to do is:
-                            <p>
-                              <p>Install the <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a></p>
-                              <p>Run <code>heroku create</code> in Selfstarter's folder</code></p>
-                              <p>Run <code>git push heroku master</code> in Selfstarter's folder</p>
-                            </p>
-                          </p>
-                        </details>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id='logos'>
-            	<ul class="wrapper clearfix">
-            	  <li id="awesomeblog"><a href=""></a></li>
-            	  <li id="coolpaper"><a href=""></a></li>
-            	  <li id="nicemag"><a href=""></a></li>
-            	  <li id="readcrunch"><a href=""></a></li>
-            	</ul>
-            </div>
-            	<div class="footer">
-              <div class="wrapper clearfix">
-              	<p>© You. Made by the guys at <a href="https://lockitron.com">Lockitron</a>. MIT License.</p>
-
-              </div>
-            </div>
-
+            </div> <!--END Footer-->
             
           </div> <!-- end preview container -->
           

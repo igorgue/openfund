@@ -11,9 +11,22 @@ module Selfstarter
   class Application < Rails::Application
     APPLICATION_FEE = 0.05
     CURRENCY = 'usd'
+    LOCAL_DOMAINS = [
+      'localhost:3000',
+      '0.0.0.0:3000',
+      '127.0.0.1:3000',
+      'localhost:8080',
+      '127.0.0.1:8080',
+      'localhost',
+      '0.0.0.0',
+      '127.0.0.1',
+      'openfund.co',
+      'openfund.co:3000',
+      'openfund.co:8080'
+    ]
 
     # --- Standard Rails Config ---
-    config.time_zone = 'Pacific Time (US & Canada)'
+    config.time_zone = 'Eastern Time (US & Canada)'
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.active_record.whitelist_attributes = true

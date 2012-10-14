@@ -11,12 +11,8 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    @campaign = Campaign.new
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
-    @campaign.name = params[:campaign][:name]
+    params[:start_time] = Time.zone.parse("#{params[:campaign].delete(:date)} #{params[:campaign].delete(:time)}")
+    @campaign = Campaign.create(params[:campaign])
   end
 
   def edit
@@ -39,7 +35,7 @@ private
   end
 
   def verify_user
-    @campaign.user_id == current_user_id
+    @campaign.user_id == current_user.id
   end
 
 end
