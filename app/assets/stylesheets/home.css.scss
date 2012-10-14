@@ -110,3 +110,14 @@ h1.pitch-title small{
 #screenshot-holder .shadow img{
     width: 940px;
 }
+
+.example-button{
+	opacity: 0.0;
+	position: relative;
+	margin-top: -475px;
+	box-shadow: 1px 1px 3px #333;
+}
+
+#screenshot-holder:hover .example-button{
+	opacity: 1 !important;
+}
