@@ -16,7 +16,7 @@ class CampaignsController < ApplicationController
     @campaign.goal = params[:goal]
     @campaign.domain = params[:domain]
     @campaign.start_time  = Time.zone.parse("#{params[:date]} #{params[:time]}")
-    @campaign.user_id = current_user_id
+    @campaign.user_id = current_user.id
     @campaign.save
   end
 
@@ -40,7 +40,7 @@ private
   end
 
   def verify_user
-    @campaign.user_id == current_user_id
+    @campaign.user_id == current_user.id
   end
 
 end
