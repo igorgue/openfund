@@ -9,7 +9,7 @@ end
 module Selfstarter
   
   class Application < Rails::Application
-    APPLICATION_FEE = 0.05
+    APPLICATION_FEE = 0.005
     CURRENCY = 'usd'
     LOCAL_DOMAINS = [
       'localhost:3000',

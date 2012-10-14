@@ -19,8 +19,13 @@
     
   </head>
   <body>
-    <%= render 'header' %>
-    <%= yield %>
-    <%= render 'footer' %>
+    <% if @seller_domain %>
+      This should render other template <%= @seller_domain %>
+      <% render 'campaigns/show_by_domain' %>
+    <% else %>
+      <%= render 'header' %>
+        <%= yield %>
+      <%= render 'footer' %>
+    <% end %>
   </body>
 </html>
