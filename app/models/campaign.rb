@@ -37,6 +37,14 @@ class Campaign < ActiveRecord::Base
     start_time.present? and start_time <= Time.zone.now and (start_time + 30.days) >= Time.zone.now
   end
 
+  def end_time
+    start_time.present? ? start_time + 30.days : Time.zone.now
+  end
+
+  def days_left
+    (Time.zone.now.to_date - (Time.zone.now + 5.days).to_date).to_i + 1
+  end
+
   def full_domain
   	"http://#{domain}/"
   end
@@ -53,6 +61,10 @@ class Campaign < ActiveRecord::Base
       	:offset => rand(c)
       )
     end
+  end
+
+  def progress
+    0
   end
 
   def backers
