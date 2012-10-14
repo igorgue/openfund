@@ -107,38 +107,24 @@ body {
 </div><br>
 <div class="container">
   <div class="row">
+    <% @domain_campaign.levels.each do |level| %>
+      <%= number_to_currency(level.cost) %>
+    <% end %>
     <div class="span10  offset1" >
       <div class="span3" id="levels">
-        <h3>Contribute 10$</h3>
+        <h3>Contribute </h3>
         <p>lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i>  Fund!</button>           
+        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i>  Fund!</button>          
       </div>
       <div class="span3" id="levels">
         <h3>Contribute 20$</h3>
         <p>lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i> Fund!</button> 
+        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i> Fund!</button>
       </div>
       <div class="span3" id="levels">
         <h3>Contribute 50$</h3>
         <p>lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i> Fund!</button>  
-      </div>
-    </div>
-    <div class="span10  offset1" >
-      <div class="span3" id="levels">
-        <h3>Contribute 100$</h3>
-        <p>lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i> Fund!</button>    
-      </div>
-      <div class="span3" id="levels">
-        <h3>Contribute 1000$</h3>
-        <p>lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i> Fund!</button>  
-      </div>
-      <div class="span3" id="levels">
-        <h3>Contribute 5000$</h3>
-        <p>lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i> Fund!</button>
+        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i> Fund!</button> 
       </div>
     </div>
 
