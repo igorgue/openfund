@@ -24,14 +24,14 @@ class Campaign < ActiveRecord::Base
   attr_reader     :date, :time
   attr_writer     :date, :time
   
-  belongs_to      :user
-  has_many        :orders
+  belongs_to  :user
+  has_many    :orders
+  has_many    :faqs,      :class_name => "CampaignFaq"
+  has_many    :levels,    :class_name => "CampaignLevel"
+  has_many    :sections,  :class_name => "CampaignSection"
   
   validates_uniqueness_of :domain
 
-  def current_funds
-    0.0
-  end
 
   def active?
     start_time.present? and start_time <= Time.zone.now and (start_time + 30.days) >= Time.zone.now
@@ -69,5 +69,9 @@ class Campaign < ActiveRecord::Base
 
   def backers
     0
+  end
+
+  def current_funds
+    0.0
   end
 end
