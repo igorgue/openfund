@@ -17,7 +17,7 @@
 #
 
 class CampaignSection < ActiveRecord::Base
-  attr_accessible :campaign_id, :title, :text, :type
+  attr_accessible :campaign_id, :title, :text, :type, :image_url
 
   validates_attachment :image, 
   	:content_type => { :content_type => ["image/jpg", "image/png", "image/gif"] }

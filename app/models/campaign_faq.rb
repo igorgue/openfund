@@ -12,5 +12,5 @@
 #
 
 class CampaignFaq < ActiveRecord::Base
-  attr_accessible :question, :answer
+  attr_accessible :question, :answer, :campaign_id
 end

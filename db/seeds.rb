@@ -33,22 +33,22 @@ campaigns = Campaign.create([
 
 levels = CampaignLevel.create([
   {
-    campaign:campaigns[0],
+    campaign_id:campaigns[0].id,
     title: "Generous Donor",
     cost: "5.00"
   },
   {
-    campaign:campaigns[0],
+    campaign_id:campaigns[0].id,
     title: "Friends & Family Sponsor",
     cost: "50.00"
   },
   {
-    campaign:campaigns[0],
+    campaign_id:campaigns[0].id,
     title: "Seed Sponsor",
     cost: "100.00"
   },
   {
-    campaign:campaigns[0],
+    campaign_id:campaigns[0].id,
     title: "Series A Sponsor",
     cost: "300.00"
   }
@@ -56,7 +56,7 @@ levels = CampaignLevel.create([
 
 sections = CampaignSection.create([
   {
-    campaign:campaigns[0],
+    campaign_id:campaigns[0].id,
     title: "Get in front of local entrepreneurs.",
     text: "The Startup Kids is a documentary about young web entrepreneurs in the U.S. and Europe. It contains interviews with the founders of Vimeo, Soundcloud, Kiip, InDinero, Dropbox, Foodspotting and many others who talk about how they started their company and their lives as an entrepreneur.",
     image_url: "http://cl.ly/image/2b2Y1V3t0w0a/Screen%20Shot%202012-10-14%20at%204.49.35%20PM.png"
@@ -65,17 +65,17 @@ sections = CampaignSection.create([
 
 faqs = CampaignFaq.create([
   {
-    campaign: campaigns[0],
+    campaign_id: campaigns[0].id,
     question: "Where will it be held?",
     answer: "More than likely a local university, who will host it for free."
   },
   {
-    campaign: campaigns[0],
+    campaign_id: campaigns[0].id,
     question: "How much will it cost?",
     answer: "It's free for everyone. We will be releasing tickets through eventbrite!"
   },
   {
-    campaign: campaigns[0],
+    campaign_id: campaigns[0].id,
     question: "When will it be?",
     answer: "Late fall, early winter at the latest."
   }
