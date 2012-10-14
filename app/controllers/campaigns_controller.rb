@@ -10,7 +10,10 @@ class CampaignsController < ApplicationController
   end
 
   def show
+
+    @campaign = Campaign.find(params[:id])
     @campaign.date = @campaign_.start_time.to_date
+    
   end
 
   def new

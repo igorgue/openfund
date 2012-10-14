@@ -23,7 +23,7 @@
       
       <ul class="nav pull-right">
       <% if !user_signed_in? %>
-        <li><a href="#">Log In</a></li>
+        <li><a href="#login_screen" data-toggle="modal">Log In</a></li>
       <% else %>
         <li><%= link_to "Log Out", destroy_user_session_path %></li>
       <% end %>
@@ -39,6 +39,8 @@
 
 <% if user_signed_in? %>
   <% unless current_user.stripe_livemode %>
-    <script type="text/javascript">alert('Need to activate your stripe account!');</script>
+    <div id="enable-stripe">
+      Hey, it looks like your &nbsp;<span class="stripelogo">Stripe&nbsp;</span>&nbsp; account is in test / development mode. Make sure you enable it!
+    </div>
   <% end %>
 <% end %>

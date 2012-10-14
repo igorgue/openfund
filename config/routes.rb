@@ -1,10 +1,16 @@
 Selfstarter::Application.routes.draw do
+  get "orders/index"
+
+  get "order/show"
+
   get "home/index"
 
   devise_for :users
 
   root :to => 'home#index'
-  resources :campaigns, :except => :show
+  resources :campaigns do 
+    resources :orders
+  end
   # match '/d/:domain' => 'campaigns#show_by_domain', :constraints  => {:domain => /[0-z\.]+/}
   #root :to => 'preorder#index'
   #match '/preorder'               => 'preorder#index'
