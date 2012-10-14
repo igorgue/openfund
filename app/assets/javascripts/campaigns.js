@@ -38,7 +38,8 @@ $(function () {
   //   });
   
   
-  $('div.preview_toggle button').click(function() {
+  $('div.preview_toggle button').click(function(e) {
+    e.preventDefault();
     
     var view = $(this).data('target');
     
@@ -64,11 +65,25 @@ $(function () {
   });
   
   /** WEB PREVIEW **/
-  $('div.edit_content').click(function() {
+  $('div.edit_content').click(function(e) {
+    e.preventDefault();
     var content = $(this).text();
-    $('#edit_blurb').find('textarea#blurb').text(content)
+    $('#edit_blurb').find('textarea#blurb').text($.trim(content))
     $('#edit_blurb').modal();
   });
+  $('#edit_blurb a.save').click(function(e) {
+    e.preventDefault();
+    
+    var new_content_box = $(this).parent().parent().find('textarea');
+    
+    var content_text = $(new_content_box).val().replace(/\n/g, "</p><p>");
+    
+    $('div.edit_content').html('<p>'+content_text+'</p>');
+    
+    $('#edit_blurb').modal('hide');
+    
+  });
+  
   
   $('span.edit_number').popover({
     trigger: 'click',

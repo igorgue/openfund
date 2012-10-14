@@ -6,7 +6,7 @@
         OpenFund.co
       </a>
         
-      <!-- <ul class="nav">
+      <!--<ul class="nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Campaigns
@@ -22,12 +22,16 @@
       </ul> -->
       
       <ul class="nav pull-right">
+      <% if !user_signed_in? %>
         <li><a href="#">Log In</a></li>
+      <% else %>
+        <li><%= link_to "Log Out", destroy_user_session_path %></li>
+      <% end %>
       </ul>
       
-      <!-- <div class="pull-right navbar-text">
-        Welcome, Motherfucker
-      </div> -->
+      <!--div class="pull-right navbar-text">
+        Welcome, Dude
+      </div-->
         
     </div>
   </div>
