@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def sign_in_redirect_path
 
     if current_user.campaigns.blank?
-      new_campaign
+      new_campaign_path
     elsif current_user.campaigns.count == 1 
       campaign_orders_path(:campaign_id => current_user.campaigns.first.id)
     else
