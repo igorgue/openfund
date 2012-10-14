@@ -11,10 +11,12 @@ class ApplicationController < ActionController::Base
 
   def sign_in_redirect_path
 
-    if current_user.campaigns.count > 0 
+    if current_user.campaings.blank?
+      new_campaign
+    elsif current_user.campaigns.count == 1 
       campaign_orders_path(:campaign_id => current_user.campaigns.first.id)
     else
-      new_campaign
+      account_index
     end
 
   end
