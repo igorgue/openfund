@@ -100,14 +100,12 @@
 
 
 
-<div class="modal hide" id="stripe_request">
-  <div class="modal-header">
-    <h3 id="myModalLabel">The first step...</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="stripe_connect">Stripe Connect</a>
+<div class="modal" id="stripe_request">
+  <div class="modal-body centered">
+    <strong>Welcome, looks like we need you to connect your &nbsp;<span class="stripelogo">Stripe</span>&nbsp; account!</strong>
+    <br/>
+    <br/>
+    <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<%= @stripe_client_id %>&scope=read_write&state=1234" class="stripe_connect">Stripe Connect</a>
+    <br/>
   </div>
 </div>

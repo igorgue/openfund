@@ -14,6 +14,7 @@ class CampaignsController < ApplicationController
 
   def new
     @campaign = Campaign.new
+    @stripe_client_id = STRIPE_CLIENT_ID
   end
 
   def create

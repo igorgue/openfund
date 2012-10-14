@@ -279,13 +279,15 @@ div.mobile_view .canvas {
   left: 33px;
 }
 a.stripe_connect {
-  width: 190px; height: 33px;
-  background: url(../img/stripe_connect.png) no-repeat;
+  width: 190px; 
+  height: 33px;
+  background: url(/images/stripe_connect.png) no-repeat;
   display: block;
   text-align: left;
   text-indent: -9999px;
-  float: right;
+  margin: 0 auto;
 }
+
 iframe { border: 0}
 
 .edit { cursor: pointer; }
@@ -315,3 +317,11 @@ iframe { border: 0}
 
 
 
+.stripelogo{
+  background-image: url(/images/stripe-logo.png);
+  background-position: 0px 1px;
+  background-size: 40px auto;
+  background-repeat: no-repeat;
+  text-indent: -9999px !important;
+  color: transparent;
+}
