@@ -1,0 +1,22 @@
+
+body{background-image: url('straws.png');background-repeat: repeat; margin:0;}
+#stats{padding-left: 5px;}
+#mainbox{background-color: rgba(0, 0, 0, 0.1);}
+.navbar-inner{color:white;font-family: 'Signika Negative', sans-serif;}
+#statbox{margin-left: 0px}
+#headline {text-align: center;}
+.row{word-wrap:break-word;}
+#video iframe{margin-top:5px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
+.progress{height: 35px;margin-right:5px;margin-left:5px;}
+.progress h3 {margin-top: 0px;}
+#title{text-align: center;font-family: 'Signika Negative', sans-serif;}
+#title h3{font-size: 23px; line-height: 100%;margin-bottom: -13px;}
+#blerb {word-wrap:break-word;overflow: hidden;padding-left: 5px;padding-right: 5px;}
+#image {width:370px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
+#imageborder img{bottom:0;width:370px; bottom:-32px;}
+#imageborder{overflow: hidden;}
+#border img{}
+#levels{word-wrap:break-word;}
+#payment-form{padding-right: 5px;padding-left:5px ;}
+#usermetadata{padding-right: 5px;padding-left:5px ;}
+
