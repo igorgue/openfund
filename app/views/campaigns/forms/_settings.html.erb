@@ -7,7 +7,7 @@
   <div class="control-group">
     <%= f.label :name, :class => "control-label" %>
     <div class="controls">
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :rel => "tooltip", :title => "What's in a name?" %>
     </div>
   </div>
 
@@ -17,7 +17,7 @@
       <div class="input-prepend">
 
         <span class="add-on">$</span>
-        <%= f.text_field :goal, :class => "input-medium", :placeholder => "100", :rel => "popover", "data-title" => "<i class='icon-question-sign'></i>", "data-content" => "kasjdk jasjdk jasdjja sjdjsakdasdsa" %>
+        <%= f.text_field :goal, :class => "input-medium", :placeholder => "100", :rel => "tooltip", :title => "C.R.E.A.M, get the money!", "data-content" => "kasjdk jasjdk jasdjja sjdjsakdasdsa" %>
       </div>
     </div>
   </div>
@@ -25,14 +25,14 @@
   <div class="control-group">
     <%= f.label :domain, :class => "control-label" %>
     <div class="controls">
-      <%= f.text_field :domain, :rel => "popover", "data-title" => "Need help?", "data-content" => "kasjdk jasjdk jasdjja sjdjsakdasdsa" %>
+      <%= f.text_field :domain, :rel => "tooltip", :title => "You are the master of this." %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label :video, :class => "control-label" %>
     <div class="controls">
-      <%= f.text_field :video, :placeholder => "Youtube or Vimeo URL", :rel => "popover", "data-title" => "Need help?", "data-content" => "kasjdk jasjdk jasdjja sjdjsakdasdsa" %>
+      <%= f.text_field :video, :placeholder => "Youtube or Vimeo URL", :rel => "tooltip", :title => "Ooooh, moving pictures!" %>
     </div>
   </div>
 
