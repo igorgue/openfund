@@ -1,3 +1,112 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#picture-bg{
+	background-image: url(/images/crowd1.jpeg); 
+	background-position: 0px -525px; 
+	height: 425px; 
+	width: 100%; 
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	z-index: 0; 
+	border-bottom: 1px solid #666; 
+	box-shadow: 1px 1px 3px #999;
+}
+
+#home-hero{
+	text-align:center; 
+	z-index: 999 !important; 
+	position: relative; 
+	height: 365px; 
+	border: 1px solid transparent;
+}
+
+#home-hero h1{
+	font-family: Lato; 
+	margin: 50px auto 0px; 
+	font-size: 52px; 
+	line-height: 56px; 
+	width: 800px;
+}
+
+#home-hero h3{
+	font-family:Lora; 
+	font-style: italic; 
+	font-size: 20px; 
+	color: #fff; 
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9) !important;
+}
+
+#go-button{
+	margin-top: 25px; 
+	font-size: 24px; 
+	font-weight: bold; 
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.9) !important; 
+	border-color: #004CB6 #004CB6 #012E71; 
+	box-shadow: 1px 2px rgba(0, 0, 0, 0.15); 
+	padding-right: 35px; 
+	padding-left: 35px;
+}
+
+.business-benefits{
+	margin-top: 65px;
+	margin-bottom: 65px;
+	padding-left: 30px;
+}
+
+.light{
+	font-weight: 300 !important;
+	margin: 0px !important;
+	margin-top: -2px !important;
+	font-size: 26px !important;
+	line-height: 36px !important;
+}
+
+.instruct-icon{
+	float: left;
+	margin-right: 10px;
+}
+
+.business-benefits .span5 p{
+	margin: auto 0px auto 45px;
+	font-size: 14px;
+	line-height: 24px;
+	color: #999;
+}
+
+.business-benefits .span5 p strong{
+	color: #777;
+}
+
+.centered{
+	text-align: center;	
+}
+
+h1.pitch-title{
+	font-family: Lato; 
+	font-size: 29px !important;
+}
+
+h1.pitch-title small{
+	line-height: 10px !important;
+	font-size: 18px !important;
+}
+
+#screenshot-holder{
+	/*border-bottom: 1px solid #eee;*/
+	position: relative;
+}
+
+#screenshot-holder .shadow{
+    width: 940px;
+    height: 33px;
+    position: absolute;
+    bottom: -2px;
+    z-index: 998;
+}
+
+#screenshot-holder .shadow img{
+    width: 940px;
+}

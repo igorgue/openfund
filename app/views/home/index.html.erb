@@ -1,3 +1,106 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= render :partial => "devise/registrations/form" %>
+<div id="picture-bg"></div>
+
+<div class="container homepage">
+	<div id="home-hero">
+		<h1>Create Your Own Private Label Crowdfunding Website</h1>
+		<h3 style="">Free to try. Simple to setup. All on your own domain.</h3>
+		<a href="#stripe_request" class="btn btn-large btn-primary" id="go-button" data-toggle="modal">Get started on your campaign!</a>
+	</div>
+
+
+	<div class="row business-benefits">
+		<div class="span5">
+			<img src="/images/Coins-In-Hand.png" class="instruct-icon" alt="[__]"/>
+			<h2 class="light">Competitive pricing</h2>
+			<p>OpenFund <strong>takes 0.5% per transaction</strong>. If you include Stripe processing it's a <em>grand total</em> of <strong>2.4% + 30&cent; per transaction</strong>.</p>
+		</div>
+		
+		<div class="span5 offset1">
+			<img src="/images/Money-Dollar-2.png" class="instruct-icon" alt="[__]"/>
+			<h2 class="light">Stripe integration</h2>
+			<p>You to have the power <em>and security</em> - we use Stripes latest technology, <strong>Stripe Connect</strong> to process your payments through their start of the art platform.</p>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top: 10px;">
+		<img src="/images/section_divider_down.png">
+	</div>
+
+	<br/>
+
+	<div class="row">
+		<div class="span12">
+			<h1 class="pitch-title centered">
+				Attract new customers like never before<br>
+				<small>Munchables helps new customers discover your restaurant.</small>
+			</h1>
+			
+			<br>
+			<br>
+			
+			<div class="centered" id="screenshot-holder">
+				<center> Replace with backend screenshot or preview of a campaign (desktop/tablet/mobile combo is nice.) </center>
+				<img src="http://placehold.it/875x388">
+				<div class="shadow">
+					<img src="/images/section_divider_up.png">
+				</div>
+			</div><!-- end of #screenshot-holder-->
+
+			<center> Also, clean this shadow image up if possible. </center>
+		</div>
+	</div><!-- end of .row-->
+
+	<br/>
+	<br/>
+
+	<div class="row">
+		<div class="centered">
+			<h1 class="pitch-title">
+				Your virtual store-front is ready for business.<br>
+				<small>The most elegant way to handle online orders is here.</small>
+			</h1>
+		</div>
+	</div>
+
+	<div class="row business-benefits">
+		<div class="span5">
+			<img src="/images/Wand.png" class="instruct-icon" alt="[__]"/>
+			<h2 class="light">Domain magic</h2>
+			<p>We understand <strong>how important your brand is</strong>, so we let you host your OpenFund campaign on your domain. Just change some DNS records. <strong>No code required!</strong></p>
+		</div>
+		
+		<div class="span5 offset1">
+			<img src="/images/Places.png" class="instruct-icon" alt="[__]"/>
+			<h2 class="light">Open up shop on your terms</h2>
+			<p>Not everyone fits into <em>other crowdfunding sites</em> "categories". There is no approval process for an OpenFund campaign, <strong>we only empower you</strong> to build a better world!</p>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top: 10px;">
+		<img src="/images/section_divider_down.png">
+	</div>
+
+	<div class="row">
+		<div class="centered">
+			<h1 class="pitch-title">What are you waiting for?</h1>
+			<a href="#stripe_request" class="btn btn-large btn-primary" id="go-button" data-toggle="modal">Create my OpenFund site!</a>
+		</div>
+	</div>
+
+	<br/>
+
+	<div class="row" style="margin-top: 10px;">
+		<img src="/images/section_divider_up.png">
+	</div>
+
+</div> <!-- end of .container-->
+
+<div class="modal hide" id="stripe_request" style="width: 254px !important; margin-left: -127px;">
+	<div class="modal-header">
+	  <h3 id="myModalLabel">Let's get started...</h3>
+	</div>
+	<div class="modal-body">
+		<p style="font-size: 12px;">You're less than 5 minutes from a preview of your first campaign!</p>
+	  <%= render :partial => "devise/registrations/form" %>
+	</div>
+</div>
