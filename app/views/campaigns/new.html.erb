@@ -33,78 +33,7 @@
         </div>
         <div class="tab-pane" id="preview">
           
-          <div class="well clearfix">
-            <p class="pull-left">You can tweak this page by clicking the elements on the page</p>
-            <a href="#" class="btn btn-primary pull-right">Save &amp; Continue to Step 3</a>
-          </div>
-          
-          <div id="web_preview">
-
-            <div class="navbar navbar-inverse">
-              <div class="navbar-inner">
-                <div class="span12 offset1" id="headline">
-                  <h1>OpenFund.co</h1>
-                </div>
-              </div>
-            </div> 
-
-            <div id="title">
-              <h3>A Tool for Crowd Funding!</h3>
-              <img src="/images/pocket-shadow.png" >
-            </div>
-            
-            <div id="mainbox">
-              <div class="container">
-                <div class="row" id="meatPotatos">
-                  <div class="span10 offset1">
-                    <div class="span5" id="video">
-                      <iframe src="http://player.vimeo.com/video/41261299?title=1&amp;byline=1&amp;portrait=1" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
-                    </div>           
-                    <div class="span5" id="statbox">
-                      <div class="span1" id="stats1">
-                        <h3>N/A</h3>
-                        <p class="muted">Backers</p>
-                      </div>
-                      <div class="span2" id="stats2" >
-                        <h3>$0</h3>
-                        <p class="muted">Of $20,000</p>
-                      </div>
-                      <div class="span1" id="stats3">
-                        <h3>N/A</h3>
-                        <p class="muted">Days left</p>
-                      </div>  
-                      <div class="span4">
-                        <div class="progress">
-                          <div class="bar bar-success" style="width: 0%;"></div>
-                          <h3>0%</h3>
-                        </div>
-                      </div>
-                      <div class="span4" id="blerb">
-                        <h3>Blerb</h3>
-                        <p>blerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-                      </div>
-                    </div>                     
-                  </div>
-                </div>
-              </div><!-- /container --> 
-              <hr>
-            </div><!--/mainbox-->
-            <!--Start Sections--> 
-
-
-            <!--/Sections-->
-            
-            <div class="container"><!--Start Footer-->
-              <div class="row">
-                <div class="span10  offset1">
-                  <footer>
-                    <p><i class="icon-globe"></i>Powered By: OpenFund.co </p>
-                  </footer>    
-                </div>
-              </div>
-            </div> <!--END Footer-->
-            
-          </div> <!-- end preview container -->
+          <%= render :partial => 'campaigns/edit_preview' %>
           
         </div> <!-- end of tab -->
         

@@ -288,10 +288,12 @@ a.stripe_connect {
 }
 iframe { border: 0}
 
+.edit { cursor: pointer; }
+
 
 /** WEB PREVIEW **/
 
-#web_preview {background-image: url('img/straws.png');background-repeat: repeat; margin:0;}
+#web_preview {background-image: url('img/straws.png');background-repeat: repeat; margin:0; overflow: hidden;}
 #web_preview #mainbox{background-color: rgba(0, 0, 0, 0.1);}
 #web_preview #meatpotatos {background-color:black; }
 #web_preview .navbar-inner{color:white;background-color: rgba(57, 255, 255, 0.3);font-family: 'Signika Negative', sans-serif;}
