@@ -16,18 +16,18 @@ class AccountController < ApplicationController
 		stripe_response = JSON.parse(http.body_str)
 
 		if stripe_response.has_key? "error"
-			@error = stripe_response[:error_description]
+			@error = stripe_response["error_description"]
 			render "account/stripe_error"
 		end
 
 		# the presence of this one key indicates success
 		if stripe_response.has_key? "stripe_publishable_key"
 			current_user.update_attributes({
-				:stripe_livemode 				=> stripe_response[:livemode],
-				:stripe_publishable_key	=> stripe_response[:stripe_publishable_key],
-				:stripe_user_id 				=> stripe_response[:stripe_user_id],
-				:stripe_refresh_token 	=> stripe_response[:refresh_token],
-				:stripe_access_token 		=> stripe_response[:access_token]
+				:stripe_livemode 				=> stripe_response["livemode"],
+				:stripe_publishable_key	=> stripe_response["stripe_publishable_key"],
+				:stripe_user_id 				=> stripe_response["stripe_user_id"],
+				:stripe_refresh_token 	=> stripe_response["refresh_token"],
+				:stripe_access_token 		=> stripe_response["access_token"]
 			})
 			@code = current_user.stripe_access_token
 		else

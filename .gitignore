@@ -24,3 +24,4 @@ config/environments/*.local.yml
 
 *.swp
 .DS_Store
+Gemfile.lock
