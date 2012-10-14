@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if current_user.campaigns.count > 0 
       campaign_orders_path(:campaign_id => current_user.campaigns.first.id)
     else
-		  new_campaign
+		  new_campaign_path
 		end
 		
   end
