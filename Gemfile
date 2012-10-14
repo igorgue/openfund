@@ -10,6 +10,8 @@ gem 'jquery-rails'        # What did you call me, boy!?
 gem 'paperclip', '3.3.0'  # I can has?
 gem 'rails', '3.2.8'      # Kinda like django...
 gem 'rails_config'        # Real talk: https://github.com/railsjedi/rails_config
+gem 'curb'							  # Short & curlies
+gem 'json'							  # Friday the 13th?
 
 group :development do
   gem 'mysql2'
