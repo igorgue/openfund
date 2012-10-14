@@ -36,3 +36,9 @@
     </div>
   </div>
 </div>
+
+<% if user_signed_in? %>
+  <% unless current_user.stripe_livemode %>
+    <script type="text/javascript">alert('Need to activate your stripe account!');</script>
+  <% end %>
+<% end %>
