@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     elsif current_user.campaigns.count == 1 
       campaign_orders_path(:campaign_id => current_user.campaigns.first.id)
     else
-      account_index
+      account_path
     end
 
   end
