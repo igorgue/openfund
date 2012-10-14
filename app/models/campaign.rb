@@ -32,5 +32,23 @@ class Campaign < ActiveRecord::Base
   def active?
     start_time.present? and start_time <= Time.zone.now and (start_time + 30.days) >= Time.zone.now
   end
+
+  def full_domain
+  	"http://#{domain}/"
+  end
+
+  def self.randy()
+    if (c = Campaign.count) != 0
+      Campaign.find(
+      	:first, 
+      	:conditions => { 
+      		:users => {:stripe_livemode => true}, 
+      		:start_time => Time.zone.parse("2012-10-01").midnight..Time.zone.now 
+      	}, 
+      	:joins => [:user], 
+      	:offset => rand(c)
+      )
+    end
+  end
   
 end
