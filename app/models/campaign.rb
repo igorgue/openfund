@@ -26,7 +26,8 @@ class Campaign < ActiveRecord::Base
   
   belongs_to  :user
   has_many    :orders
-  has_many    :levels, :class_name => "CampaignLevel"  
+  has_many    :levels,    :class_name => "CampaignLevel"
+  has_many    :sections,  :class_name => "CampaignSection"
   
   validates_uniqueness_of :domain
 
