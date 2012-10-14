@@ -16,7 +16,8 @@ campaigns = Campaign.create([
     tagline: 'Watch the new docummentary about startups',
     start_time: 1.week.ago,
     show_link: true,
-    user: user
+    user: user,
+    video: '<iframe width="470" height="350" src="http://www.youtube.com/embed/ApUln7AD0_Q" frameborder="0" allowfullscreen></iframe>'
   }, {
     name: 'The Startup Kids Screening',
     goal: '750',
@@ -24,6 +25,7 @@ campaigns = Campaign.create([
     tagline: 'Watch the new docummentary about startups',
     start_time: 1.day.ago,
     show_link: true,
-    user: user
+    user: user,
+    video: '<iframe width="470" height="350" src="http://www.youtube.com/embed/ApUln7AD0_Q" frameborder="0" allowfullscreen></iframe>'
   }
 ])
