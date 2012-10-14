@@ -17,6 +17,7 @@
 #  transaction_id    :string(255)
 #  email             :string(255)
 #  campaign_level_id :integer
+#  campaign_id       :integer
 #
 
 require 'test_helper'

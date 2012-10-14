@@ -3,6 +3,7 @@ class AccountController < ApplicationController
 
   def index
     @code = current_user.stripe_access_token
+    @campaigns = current_user.campaigns
   end
 
   def stripe_connect
