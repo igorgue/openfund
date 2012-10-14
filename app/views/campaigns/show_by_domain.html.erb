@@ -86,7 +86,7 @@ body {
       <div class="span3" id="levels">
         <h3><%= level.title %>: <%= number_to_currency(level.cost) %></h3>
         <p><%= level.description %></p>
-        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i><%= number_to_currency(level.cost) %>  Fund!</button>          
+        <a class="btn btn-large btn-success" href="/checkout/<%= level.id %>"><i class="icon-heart"></i><%= number_to_currency(level.cost) %> Fund!</a>          
       </div>
     <% end %>
     </div>
