@@ -10,14 +10,15 @@ user = User.create :email => "startupkids@gmail.com", :password => "111111", :pa
 
 campaigns = Campaign.create([
   {
-    name: 'The Startup Kids Screening',
-    goal: '750',
-    domain: 'thestartupkids.com',
-    tagline: 'Watch the new docummentary about startups',
+    name: 'Screening: The Startup Kids',
+    goal: '500',
+    domain: 'miamistartupkids.com',
+    tagline: 'A pre-screening of a documentary about young web entrepreneurs',
     start_time: 1.week.ago,
     show_link: true,
     user: user,
-    video: '<iframe width="470" height="350" src="http://www.youtube.com/embed/ApUln7AD0_Q" frameborder="0" allowfullscreen></iframe>'
+    video: '<iframe width="470" height="350" src="http://www.youtube.com/embed/ApUln7AD0_Q" frameborder="0" allowfullscreen></iframe>',
+    blurb: 'We are trying to get a pre-screening played in Miami. It would be a great tech community-building activity.'
   }, {
     name: 'The Startup Kids Screening',
     goal: '750',
@@ -27,5 +28,55 @@ campaigns = Campaign.create([
     show_link: true,
     user: user,
     video: '<iframe width="470" height="350" src="http://www.youtube.com/embed/ApUln7AD0_Q" frameborder="0" allowfullscreen></iframe>'
+  }
+])
+
+levels = CampaignLevel.create([
+  {
+    campaign:campaigns[0],
+    title: "Generous Donor",
+    cost: "5.00"
+  },
+  {
+    campaign:campaigns[0],
+    title: "Friends & Family Sponsor",
+    cost: "50.00"
+  },
+  {
+    campaign:campaigns[0],
+    title: "Seed Sponsor",
+    cost: "100.00"
+  },
+  {
+    campaign:campaigns[0],
+    title: "Series A Sponsor",
+    cost: "300.00"
+  }
+])
+
+sections = CampaignSection.create([
+  {
+    campaign:campaigns[0],
+    title: "Get in front of local entrepreneurs.",
+    text: "The Startup Kids is a documentary about young web entrepreneurs in the U.S. and Europe. It contains interviews with the founders of Vimeo, Soundcloud, Kiip, InDinero, Dropbox, Foodspotting and many others who talk about how they started their company and their lives as an entrepreneur.",
+    image_url: "http://cl.ly/image/2b2Y1V3t0w0a/Screen%20Shot%202012-10-14%20at%204.49.35%20PM.png"
+  }
+])
+
+faqs = CampaignFaq.create([
+  {
+    campaign: campaigns[0],
+    question: "Where will it be held?",
+    answer: "More than likely a local university, who will host it for free."
+  },
+  {
+    campaign: campaigns[0],
+    question: "How much will it cost?",
+    answer: "It's free for everyone. We will be releasing tickets through eventbrite!"
+  },
+  {
+    campaign: campaigns[0],
+    question: "When will it be?",
+    answer: "Late fall, early winter at the latest."
   }
 ])
