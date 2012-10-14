@@ -76,35 +76,9 @@ body {
     </div>
 </div><!-- /container --> <div class="offset2"><%= image_tag 'pocket-shadow.png' %></div></div><br><!--/mainbox-->
 <!--Start Sections--> 
-<div class="container">
-  <div class="row">
-    <div class="span10  offset1">
-      <div class="span5" id="blerb">
-        <h3>Blerb</h3>
-        <p>lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-        <h3>Blerb</h3>
-        <p>lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-      </div>
-      <div class="span4" id="image">
-        <%= image_tag 'obama-toast.jpeg' %>
-      </div> 
-    </div>
-  </div>
-  <div class="span10 offset1" id="moveborder"><%= image_tag 'pocket-shadow.png' %></div>
+  <%= render :partial => 'campaigns/shared/sections' %>
 
 </div>
-<div class="container">
-  <div class="row">
-    <div class="span8 offset2">
-
-      <h1>Blerb</h1>
-      <p class="lead">lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
-
-
-    </div>
-  </div>
-  <div class="span10 offset1" id="moveborder"><%= image_tag 'pocket-shadow.png' %></div>
-</div><br>
 <div class="container">
   <div class="row">
     <div class="span10  offset1" >
@@ -112,7 +86,7 @@ body {
       <div class="span3" id="levels">
         <h3><%= level.title %>: <%= number_to_currency(level.cost) %></h3>
         <p><%= level.description %></p>
-        <button class="btn btn-large btn-success" type="button"><i class="icon-heart"></i><%= number_to_currency(level.cost) %>  Fund!</button>          
+        <a class="btn btn-large btn-success" href="/checkout/<%= level.id %>"><i class="icon-heart"></i><%= number_to_currency(level.cost) %> Fund!</a>          
       </div>
     <% end %>
     </div>
