@@ -63,6 +63,10 @@ class Campaign < ActiveRecord::Base
     end
   end
 
+  def progress
+    0
+  end
+
   def backers
     0
   end

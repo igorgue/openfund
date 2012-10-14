@@ -62,8 +62,8 @@ body {
           </div>  
           <div class="span4">
             <div class="progress">
-              <div class="bar bar-success" style="width: 35%;"></div>
-              <h3> &nbsp;35%</h3>
+              <div class="bar bar-success" style="width: <%= @domain_campaign.progress %>%;"></div>
+              <h3> &nbsp;<%= @domain_campaign.progress %>%</h3>
             </div>
           </div>
           <div class="span4" id="blerb">
