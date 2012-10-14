@@ -14,12 +14,9 @@ class HomeController < ApplicationController
   end
 
   def checkout
-    host = request.headers['host']
-    @level = CampaignLevel.find( 
-      :conditions => { 
-        :campaigns => {:domain => host}
-      }
-    )
+    render 'checkout'
+    #host = request.headers['host']
+    #@level = CampaignLevel.find(params[:id])
   end
 
   def complete

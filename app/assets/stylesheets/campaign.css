@@ -20,3 +20,67 @@ body{background-image: url('straws.png');background-repeat: repeat; margin:0;}
 #payment-form{padding-right: 5px;padding-left:5px ;}
 #usermetadata{padding-right: 5px;padding-left:5px ;}
 
+
+
+#terms{background-color: rgba(0, 0, 0, 0.1);}
+#terms p{padding-right: 10px;font-size: 85%;}
+#paymentbutton{margin-left:180px;}
+#stats{padding-left: 5px;}
+#stats2{padding-left: 0px;}
+#mainbox{background-color: rgba(0, 0, 0, 0.1);}
+#SocialMedia{margin-top:45px ;}
+.navbar-inner {
+  background-color: blue; /* background color will be black for all browsers */
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;color:white;font-family: 'Signika Negative', sans-serif;
+}
+#statbox{margin-left: 0px}
+#headline {text-align: center;}
+.row{word-wrap:break-word;}
+#video iframe{margin-top:10px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
+.progress{height: 35px;margin-right:5px;margin-left:5px;}
+.progress h3 {margin-top: 0px;}
+#title{text-align: center;font-family: 'Signika Negative', sans-serif;}
+#title h3{font-size: 23px; line-height: 100%;margin-bottom: -13px;}
+#blerb {word-wrap:break-word;overflow: hidden;padding-left: 5px;padding-right: 5px;}
+#image img{width:100%;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
+#imageborder img{bottom:0;width:100%; margin-bottom:-32px;}
+#imageborder{}
+#border img{}
+#levels{word-wrap:break-word; padding-left: 20px;}
+#payment-form{padding-right: 5px;padding-left:5px ;}
+#usermetadata{padding-right: 5px;padding-left:5px ;}
+#footers {float:right;}
+#thankyoul{margin-top:-60px;text-align: center;}
+@media all and (max-width: 480px)  {
+    .half {
+        float: left !important;
+        width: 33% !important
+    }
+#stats2{padding-right: 5px;text-align: right;}
+#byebyeshadow{display:none;}
+#SocialMedia{padding-left:40px;}
+#terms{margin: 0;margin-top: 0px;padding-top: 5px;}
+#paymentbutton{margin-left:0px;}
+.hero-unit{margin-left:10px;}
+#thankyoup{margin:0;padding-left: 5px;padding-bottom:15px ;}
+#thankyoul{margin-top:-40px;}
+#imageborder img{bottom:0;width:100%; margin-bottom:-16px;}
+}
+@media all and (max-width: 767px)  {
+    .progress {
+        float: left !important;
+        width: 97% !important
+    }
+    #stats2{padding-right: 5px;text-align: right;width: 33%;float: left}
+    #stats{width:33%; float: left;}
+#byebyeshadow{display:none;}
+#SocialMedia{padding-left:40px;}
+#terms{margin: 0;margin-top: 0px;padding-top: 5px;}
+#paymentbutton{margin-left:0px;}
+.hero-unit{margin-left:10px;}
+#thankyoup{margin:0;padding-left: 5px;padding-bottom:15px ;}
+}
+.hero-unit{padding:0;}
+
