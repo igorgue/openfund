@@ -23,7 +23,9 @@ Selfstarter::Application.routes.draw do
   match 'account'                 => 'account#index'
   match 'account/stripe-connect'  => 'account#stripe_connect'
   match 'account/stripe-error'    => 'account#stripe_error'
-  match 'checkout'                => 'home#checkout'
+  #match 'checkout'                => 'home#checkout'
+  match 'checkout/thanks'       => 'home#complete'
+  match 'checkout/:id'            => 'home#checkout'
   match 'complete'                => 'account#complete'
   match 'confirmation'            => 'account#confirmation'
 
