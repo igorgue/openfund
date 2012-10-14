@@ -2,6 +2,9 @@ class HomeController < ApplicationController
   before_filter :client_domain
 
   def index
+    if @client_domain
+      render 'campaign/show_by_domain'
+    end
   end
 
   def client_domain
