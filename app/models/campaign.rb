@@ -42,7 +42,7 @@ class Campaign < ActiveRecord::Base
   end
 
   def days_left
-    (Time.zone.now.to_date - (Time.zone.now + 5.days).to_date).to_i + 1
+    (end_time.to_date - (Time.zone.now).to_date).to_i + 1
   end
 
   def full_domain
@@ -68,10 +68,6 @@ class Campaign < ActiveRecord::Base
   end
 
   def backers
-    0
-  end
-
-  def days_left
     0
   end
 end
