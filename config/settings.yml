@@ -10,7 +10,7 @@ project_goal: 100
 # If you want to edit the FAQ, head over to app/views/preorder/homepage/_faqs.html.erb
 
 # This'll be both the page title (<title></title>) and the name in the header
-product_name: "Selfstarter"
+product_name: "Openfund"
 
 # An image showcasing your product -- it'll show up when you pin your product
 # It should be in app/assets/images
