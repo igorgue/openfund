@@ -5,6 +5,11 @@ class HomeController < ApplicationController
     if @campaign
       render 'campaigns/show_by_domain'
     end
+
+    if current_user
+      redirect_to sign_in_redirect_path
+    end
+
     @random_campaign = Campaign.randy
   end
 
