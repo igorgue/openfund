@@ -24,14 +24,13 @@ class Campaign < ActiveRecord::Base
   attr_reader     :date, :time
   attr_writer     :date, :time
   
-  belongs_to      :user
-  has_many        :orders
+  belongs_to  :user
+  has_many    :orders
+  has_many    :levels,    :class_name => "CampaignLevel"
+  has_many    :sections,  :class_name => "CampaignSection"
   
   validates_uniqueness_of :domain
 
-  def current_funds
-    0.0
-  end
 
   def active?
     start_time.present? and start_time <= Time.zone.now and (start_time + 30.days) >= Time.zone.now
@@ -42,7 +41,7 @@ class Campaign < ActiveRecord::Base
   end
 
   def days_left
-    (Time.zone.now.to_date - (Time.zone.now + 5.days).to_date).to_i + 1
+    (end_time.to_date - (Time.zone.now).to_date).to_i + 1
   end
 
   def full_domain
@@ -71,7 +70,12 @@ class Campaign < ActiveRecord::Base
     0
   end
 
-  def days_left
-    0
+  def current_funds
+    0.0
+  end
+
+  def levels
+    #raise "#{CampaignLevel.where :campaign_id => @id}"
+    CampaignLevel.where :campaign_id => @id
   end
 end

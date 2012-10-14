@@ -32,7 +32,7 @@ class CampaignsController < ApplicationController
   end
 
   def edit
-    @campaign.description       ||= "This is the area for your sexy ass description."
+    @campaign.blurb             ||= "This is the area for your sexy ass description."
     @campaign.tagline           ||= "Clever tagline."
     @campaign.secondary_tagline ||= "Another clever tagline, for good measure."
   end
@@ -51,6 +51,22 @@ class CampaignsController < ApplicationController
 
   def show_by_domain
     @campaign = Campaign.find_by_domain!(params[:domain])
+  end
+
+  def add_level
+    @level = @campaign.levels.build(:title => params[:title], :description => params[:desciption], :cost => params[:cost].to_f).save
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def add_faq
+  end
+
+  def add_section
+  end
+
+  def update_blurb
   end
 
 private
