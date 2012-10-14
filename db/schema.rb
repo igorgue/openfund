@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014170656) do
+ActiveRecord::Schema.define(:version => 20121014183526) do
 
   create_table "campaign_faqs", :force => true do |t|
     t.integer  "campaign_id"
@@ -90,12 +90,12 @@ ActiveRecord::Schema.define(:version => 20121014170656) do
   add_index "orders", ["campaign_id"], :name => "index_orders_on_campaign_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.boolean  "stripe_livemode"
+    t.boolean  "stripe_livemode",        :default => false
     t.string   "stripe_publishable_key"
     t.string   "stripe_user_id"
     t.string   "stripe_refresh_token"
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20121014170656) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -5,6 +5,7 @@ class HomeController < ApplicationController
     if @campaign
       render 'campaigns/show_by_domain'
     end
+    @random_campaign = Campaign.randy
   end
 
   def client_domain

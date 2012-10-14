@@ -12,7 +12,7 @@
 		<div class="span5">
 			<img src="/images/Coins-In-Hand.png" class="instruct-icon" alt="[__]"/>
 			<h2 class="light">Competitive pricing</h2>
-			<p>OpenFund <strong>takes 0.5% per transaction</strong>. If you include Stripe processing it's a <em>grand total</em> of <strong>2.4% + 30&cent; per transaction</strong>.</p>
+			<p>OpenFund <strong>takes 0.5% per transaction</strong>. If you include Stripe processing it's a <em>grand total</em> of <strong>3.4% + 30&cent; per transaction</strong>.</p>
 		</div>
 		
 		<div class="span5 offset1">
@@ -44,7 +44,7 @@
 				<br/>
 				<br/>
 				<br/>
-				<a href="<%= @random_project %>" class="btn btn-info btn-large example-button">See an example campaign site</a>
+				<a href="<%= @random_campaign.try(:full_domain) %>#" class="btn btn-info btn-large example-button">See an example campaign site</a>
 			</div><!-- end of #screenshot-holder-->
 		</div>
 	</div><!-- end of .row-->
