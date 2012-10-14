@@ -24,14 +24,17 @@ class CampaignsController < ApplicationController
 
   def create
     params[:start_time] = Time.zone.parse("#{params[:campaign].delete(:date)} #{params[:campaign].delete(:time)}")
-    @campaign = Campaign.new(params[:campaign].merge(:user_id => current_user.id))
+    @campaign = Campaign.new(params[:campaign]).user = current_user
     @campaign.save
     redirect_to edit_campaign_path(@campaign)
   rescue
-    render :edit
+    render :new
   end
 
   def edit
+    @campaign.description       ||= "This is the area for your sexy ass description."
+    @campaign.tagline           ||= "Clever tagline."
+    @campaign.secondary_tagline ||= "Another clever tagline, for good measure."
   end
 
   def update
