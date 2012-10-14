@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
 
-  # before_filter :find_campaign,       :only => [:update, :delete, :edit, :show]
+  before_filter :find_campaign,       :only => [:update, :delete, :edit, :show]
   before_filter :authenticate_user!,  :only => [:update, :delete, :edit, :new, :create]
 
 
@@ -10,26 +10,34 @@ class CampaignsController < ApplicationController
   end
 
   def show
+    @campaign.date = @campaign_.start_time.to_date
   end
 
   def new
     @campaign = Campaign.new
     @stripe_client_id = STRIPE_CLIENT_ID
+    render :edit
   end
 
   def create
     params[:start_time] = Time.zone.parse("#{params[:campaign].delete(:date)} #{params[:campaign].delete(:time)}")
-    @campaign = Campaign.create(params[:campaign])
-    respond_to do |format|
-      format.html { redirect_to root_path }
-      format.js
-    end
+    @campaign = Campaign.new(params[:campaign])
+    @campaign.save
+    redirect_to edit_campaign_path(@campaign)
+  rescue
+    render :edit
   end
 
   def edit
   end
 
   def update
+    params[:start_time] = Time.zone.parse("#{params[:campaign].delete(:date)} #{params[:campaign].delete(:time)}")
+    @campaign.update_attributes(params[:campaign])
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
 
   def delete

@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function() {
   
   $('#stripe_request').modal({
     backdrop: 'static',
@@ -92,7 +92,9 @@ $(function () {
   });
   
   
-  
+  if(new_campaign == false){
+    $("#step2link").click();
+  }
   
   
 });
