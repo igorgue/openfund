@@ -1,12 +1,15 @@
-  <% @domain_campaign.sections.each do |section| %>
-    <div class="container" class="blurb_pic_left">
-      <div class="row">
-        <div class="span10 offset1">                
-          <div class="span5" id="blerb">
-            <h3><%= section.title %></h3>
-            <p><%= section.text %></p>
-          </div><!-- end of .span5 -->
-        </div><!-- end of .span10 -->
-      </div><!-- end of .row -->
-    </div> <!-- end of .container -->
-  <% end %>
+<% @domain_campaign.sections.each do |section| %>
+  <div class="container" class="blurb_pic_left">
+    <div class="row">
+      <div class="span10 offset1">                
+      <div class="span4" id="imageborder">
+        <img src="<%= section.image_url %>"> 
+      </div> 
+        <div class="span5" id="blerb">
+          <h3><%= section.title %></h3>
+          <p><%= section.text %></p>
+        </div><!-- end of .span5 -->
+      </div><!-- end of .span10 -->
+    </div><!-- end of .row -->
+  </div> <!-- end of .container -->
+<% end %>
