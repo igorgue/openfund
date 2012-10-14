@@ -11,12 +11,15 @@
         <th>
           <td>Name</td>
           <td>Contributed</td>
+          <td>Level</td>
         </th>
       </thead>
       <tbody>
         <% @orders.each do |order| %>
         <tr>
-          <td></td>
+          <td><%= order.name %></td>
+          <td><%= order.price %></td>
+          <td><%= order.campaign_level_id %></td>
         </tr>
         <% end %>
         
