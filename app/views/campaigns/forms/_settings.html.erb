@@ -1,45 +1,45 @@
-<%= form_for(@campaign, :html => { :class => "form form-horizontal", :id => "settings" }) do |f| %>
+<%= form_for(@campaign, :remote => true,:html => { :class => "form form-horizontal", :id => "settings" }) do |f| %>
 
   <legend>Please edit your campaign settings</legend>
 
   <div class="control-group">
-    <label class="control-label" for="name">Name</label>
+    <%= f.label :name, :class => "control-label" %>
     <div class="controls">
-      <input type="text" name="name" id="name" value="<%= @campaign.name %>" />
+      <%= f.text_field :name %>
     </div>
   </div>
 
   <div class="control-group">
-    <label class="control-label" for="goal">Goal</label>
+    <%= f.label :goal, :class => "control-label" %>
     <div class="controls">
       <div class="input-prepend">
 
-        <span class="add-on">$</span><input type="text" name="goal" class="input-medium" id="goal" placeholder="$100 - $30,000" rel="popover" data-title="<i class='icon-question-sign'></i>" data-content="kasjdk jasjdk jasdjja sjdjsakdasdsa" />
-
+        <span class="add-on">$</span>
+        <%= f.text_field :goal, :class => "input-medium", :placeholder => "$100", :rel => "popover", "data-title" => "<i class='icon-question-sign'></i>", "data-content" => "kasjdk jasjdk jasdjja sjdjsakdasdsa" %>
       </div>
     </div>
   </div>
 
   <div class="control-group">
-    <label class="control-label" for="domain">Domain</label>
+    <%= f.label :domain, :class => "control-label" %>
     <div class="controls">
-      <input type="text" name="domain" id="domain" rel="popover" data-title="Need help?" data-content="kasjdk jasjdk jasdjja sjdjsakdasdsa" value="<%= @campaign.domain %>" />
+      <%= f.text_field :domain, :rel => "popover", "data-title" => "Need help?", "data-content" => "kasjdk jasjdk jasdjja sjdjsakdasdsa" %>
     </div>
   </div>
 
   <div class="control-group">
-    <label class="control-label" for="video">Video</label>
+    <%= f.label :video, :class => "control-label" %>
     <div class="controls">
-      <input type="text" name="video" id="video" placeholder="Youtube or Vimeo URL" rel="popover" data-title="Need help?" data-content="kasjdk jasjdk jasdjja sjdjsakdasdsa" value="<%= '' %>" />
+      <%= f.text_field :video, :placeholder => "Youtube or Vimeo URL", :rel => "popover", "data-title" => "Need help?", "data-content" => "kasjdk jasjdk jasdjja sjdjsakdasdsa" %>
     </div>
   </div>
 
   <div class="control-group">
-    <label class="control-label" for="name">Start Date/Time</label>
+    <%= f.label :start, :class => "control-label" %>
     <div class="controls">
-      <input type="text" name="date" id="date" class="input-small" data-datepicker="datepicker" />
+      <%= f.text_field :date, :class => "input-small", "data-datepicker" => "datepicker" %>
       <div class="input-append bootstrap-timepicker-component">
-        <input type="text" class="timepicker-default input-small" name="time" id="time" />
+        <%= f.text_field :time, :class => "timepicker-default input-small", "data-datepicker" => "timepicker" %>
         <span class="add-on">
             <i class="icon-time"></i>
         </span>
@@ -88,7 +88,7 @@
   </div-->
   
   <div class="control-group">
-    <label class="control-label" for="name">Show our ad</label>
+    <%= f.label :show_link, "Show Our Ad", :class => "control-label" %>
     <div class="controls">
       <label class="checkbox">
         <input type="checkbox" checked />

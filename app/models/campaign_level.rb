@@ -21,6 +21,8 @@ class CampaignLevel < ActiveRecord::Base
   end
 
   def application_fee_cents
-    (@cost.to_f * APPLICATION_FEE * 100).to_i
+    application_fee = Selfstarter::Application::APPLICATION_FEE
+
+    (@cost.to_f * application_fee * 100).to_i
   end
 end
