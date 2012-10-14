@@ -31,5 +31,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :stripe_livemode, :stripe_publishable_key, :stripe_user_id, 
+  								:stripe_refresh_token, :stripe_access_token
   has_many :orders
 end
