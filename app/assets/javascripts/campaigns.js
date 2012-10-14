@@ -78,7 +78,8 @@ $(document).ready(function() {
   $('a.add_faq').click(function(e) {
     e.preventDefault();
     var content = $(this).text();
-    $('#add_faq').find('input[type="text"],textarea').text("").value.("");
+    $('#add_faq input[type="text"]').value("");
+    $('#add_faq textarea').text("");
     $('#add_faq').modal();
   });
   

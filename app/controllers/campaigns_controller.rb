@@ -24,7 +24,7 @@ class CampaignsController < ApplicationController
 
   def create
     params[:start_time] = Time.zone.parse("#{params[:campaign].delete(:date)} #{params[:campaign].delete(:time)}")
-    @campaign = Campaign.new(params[:campaign]).user = current_user
+    @campaign = current_user.campaigns.build(params[:campaign])
     @campaign.save
     redirect_to edit_campaign_path(@campaign)
   rescue
