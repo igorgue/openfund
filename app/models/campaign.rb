@@ -26,6 +26,7 @@ class Campaign < ActiveRecord::Base
   
   belongs_to  :user
   has_many    :orders
+  has_many    :faqs,      :class_name => "CampaignFaq"
   has_many    :levels,    :class_name => "CampaignLevel"
   has_many    :sections,  :class_name => "CampaignSection"
   
