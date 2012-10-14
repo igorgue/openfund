@@ -19,12 +19,8 @@
     
   </head>
   <body>
-    <% if @seller_domain %>
-      This should render other template <%= @seller_domain %>
-    <% else %>
-      <%= render 'home/header' %>
-        <%= yield %>
-      <%= render 'home/footer' %>
-    <% end %>
+    <%= render 'home/header' %>
+      <%= yield %>
+    <%= render 'home/footer' %>
   </body>
 </html>
