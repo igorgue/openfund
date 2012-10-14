@@ -22,6 +22,14 @@ class HomeController < ApplicationController
     )
   end
 
+  def complete
+    
+  end
+
+  def confirmation
+    
+  end
+
   def client_domain
     host = request.headers['host']
     local_domains = Selfstarter::Application::LOCAL_DOMAINS

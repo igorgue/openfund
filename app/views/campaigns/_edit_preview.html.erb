@@ -3,6 +3,8 @@
   <a href="#" class="btn btn-primary pull-right">Save &amp; Continue to Step 3</a>
 </div>
 
+<a class="btn btn-primary add_faq">Add FAQ</a>
+
 <div id="web_preview">
 
   <div class="navbar navbar-inverse">
@@ -195,10 +197,11 @@
     <h3>Edit Blurb</h3>
   </div>
   <div class="modal-body">
+    <input type="hidden" name="id" id="id" value="<%= @campaign.id %>" />
     <textarea name="blurb" id="blurb" rows="8" class="blurb_box input-xlarge"></textarea>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn btn-primary save">Save</a>
+    <button href="#" class="btn btn-primary save" type="submit">Save</button>
   </div>
 </div>
 
@@ -208,10 +211,11 @@
     <h3>New FAQ</h3>
   </div>
   <div class="modal-body">
+    <input type="hidden" name="id" id="id" value="<%= @campaign.id %>" />
     <textarea name="faq" id="faq" rows="8" class="faq_box input-xlarge"></textarea>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn btn-primary save">Save</a>
+    <button href="#" class="btn btn-primary save" type="submit">Save</button>
   </div>
 </div>
 
@@ -221,10 +225,11 @@
     <h3>New Level</h3>
   </div>
   <div class="modal-body">
+    <input type="hidden" name="id" id="id" value="<%= @campaign.id %>" />
     <textarea name="level" id="level" rows="8" class="level_box input-xlarge"></textarea>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn btn-primary save">Save</a>
+    <button href="#" class="btn btn-primary save" type="submit">Save</button>
   </div>
 </div>
 
@@ -234,9 +239,10 @@
     <h3>New Section</h3>
   </div>
   <div class="modal-body">
+    <input type="hidden" name="id" id="id" value="<%= @campaign.id %>" />
     <textarea name="section" id="section" rows="8" class="section_box input-xlarge"></textarea>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn btn-primary save">Save</a>
+    <button href="#" class="btn btn-primary save" type="submit">Save</button>
   </div>
 </div>

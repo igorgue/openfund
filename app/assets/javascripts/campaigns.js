@@ -71,23 +71,15 @@ $(document).ready(function() {
     $('#edit_blurb').find('textarea#blurb').text($.trim(content))
     $('#edit_blurb').modal();
   });
-  $('#edit_blurb a.save').click(function(e) {
-    e.preventDefault();
-    
-    var new_content_box = $(this).parent().parent().find('textarea');
-    
-    var content_text = $(new_content_box).val().replace(/\n/g, "</p><p>");
-    
-    $('div.edit_content').html('<p>'+content_text+'</p>');
-    
+  $('#edit_blurb button.save').click(function(e) {
     $('#edit_blurb').modal('hide');
-    
   });
 
   $('a.add_faq').click(function(e) {
     e.preventDefault();
     var content = $(this).text();
-    $('#add_faq').find('textarea#blurb').text($.trim(content))
+    $('#add_faq input[type="text"]').value("");
+    $('#add_faq textarea').text("");
     $('#add_faq').modal();
   });
   
