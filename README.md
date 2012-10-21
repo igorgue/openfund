@@ -126,8 +126,3 @@ Finally you can run our app
 ```bash
 rails server
 ```
-
-
-```bash
-ruby-1.9.2-p320@openfund
-```
