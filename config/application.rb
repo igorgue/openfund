@@ -21,8 +21,11 @@ module Selfstarter
       '0.0.0.0',
       '127.0.0.1',
       'openfund.co',
+      'www.openfund.co',
       'openfund.co:3000',
-      'openfund.co:8080'
+      'www.openfund.co:3000',
+      'openfund.co:8080',
+      'www.openfund.co:8080'
     ]
 
     # --- Standard Rails Config ---
