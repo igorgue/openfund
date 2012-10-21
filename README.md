@@ -1,97 +1,133 @@
-# Selfstarter
+# OpenFund
 Selfstarter makes it easy to roll your own crowdfunding site. To get started, fork this repository and change around ```config/settings.yml``` to suit your needs.
 
 [See it in action](http://selfstarter.us)
 
-## Background
+## Homebrew Installation
 
-After a [rejection from Kickstarter](http://techcrunch.com/2012/10/07/the-story-of-lockitron-crowdfunding-without-kickstarter/), we decided to follow in the footsteps of [App.net](https://app.net/) and make our own crowdfunding site for [Lockitron](https://lockitron.com). We've been absolutely blown away by the response. As a first step in what will hopefully be a long history of giving back, we have decided to open source the crowdfunding platform that got us here. Please send questions, comments, or concerns to [hello@lockitron.com](mailto:hello@lockitron.com)!
-
-Selfstarter is a starting point. We made some specific choices with Selfstarter for Lockitron and we recommend you tailor it for your project:
-
-* We use Amazon Payments for payments. You can use [Stripe](https://stripe.com) or [WePay](https://www.wepay.com/). We used Kickstarter's awesome ```amazon_flex_pay``` gem.
-* We collect multi-use tokens from customers with Amazon Payments - this let's us collect payment information without charging the customer until we are ready to ship
-* Selfstarter doesn't come with any authentication, administration, mailers or analytics tools. We recommend adding a basic set of these so that you can message backers and manage orders.
-
-## Getting Started
-*Note: This assumes you have Ruby 1.9.2 or later installed properly and have a basic working knowledge of how to use RubyGems*
-
-First you'll need to fork and clone this repo
+Grab homebrew to install extraproject dependencies
 
 ```bash
-git clone https://github.com/lockitron/selfstarter.git
+ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 ```
 
-Let's get all our dependencies setup:
+Please note, you might not have the necessary compilers & may have to download XCode + XCode command line tools from [developer.apple.com](https://developer.apple.com/).
+
+Update homebrew
+
 ```bash
-bundle install --without production
+brew update
 ```
 
-Now let's create the database:
+Install mysql
+
+```bash
+brew install mysql
+```
+
+& git if you dont have it.
+
+```bash
+brew install git
+```
+
+& imagemagick (for use by paperclip)
+
+```bash
+brew install imagemagick
+```
+
+## RVM + Ruby + Rails dependency Installation
+
+Grab RVM. Here is the [rvm site](https://rvm.io/) 
+
+```bash
+\curl -L https://get.rvm.io | bash -s stable --ruby
+```
+
+Install ruby 1.9.2
+
+```bash
+rvm install 1.9.2
+```
+
+Clone the openfund repo
+
+```bash
+git clone git@github.com:igorgue/openfund.git
+```
+
+Create your .rvmrc file in the openfund directory, it should contain the following
+
+```bash
+rvm 1.9.2@openfund
+```
+
+Now make sure you're using ruby 1.9.2
+
+```bash
+rvm use 1.9.2
+```
+
+Alright, now create the gemset
+
+```bash
+rvm gemset create openfund
+```
+
+Now make sure you are in your openfund directory & source your .rvmrc file
+
+```bash
+cd /path/to/openfund/ && source .rvmrc
+```
+
+you should get this sort of output
+
+```bash
+====================================================================================
+= NOTICE                                                                           =
+====================================================================================
+= RVM has encountered a new or modified .rvmrc file in the current directory       =
+= This is a shell script and therefore may contain any shell commands.             =
+=                                                                                  =
+= Examine the contents of this file carefully to be sure the contents are          =
+= safe before trusting it! ( Choose v[iew] below to view the contents )            =
+====================================================================================
+Do you wish to trust this .rvmrc file? (/Users/austonbunsen/Sites/bootstrap/.rvmrc)
+y[es], n[o], v[iew], c[ancel]> 
+```
+
+Hit y+enter. Now run 
+
+```bash
+bundle install
+```
+
+Next create the database
+
+```bash
+rake db:create
+```
+
+and migrate it
+
 ```bash
 rake db:migrate
 ```
 
-Let's get it running:
-```bash
-rails s
-```
-
-### Customizing
-
-While it is *just* a skeleton, we did make it a little quicker to change around things like your product name, the colors, pricing, etc.
-
-To change around the product name, tweet text, and more, open this file:
-
-```
-config/settings.yml
-```
-
-To change around the colors and fonts, open this file:
-
-```
-app/assets/stylesheets/variables.css.scss
-```
-
-To dive into the code, open this file:
-
-```
-app/controllers/preorder_controller.rb
-```
-
-### Deploying to Production
-
-We recommend using Heroku, and we even include a ```Procfile``` for you. All you need to do is run:
+and seed it
 
 ```bash
-gem install heroku
-heroku create
-git push heroku master
-heroku run rake db:migrate
-heroku open
+rake db:seed
 ```
-## Contributing
 
-In it's current state, Selfstarter is very skeletal. We welcome your pull requests. If you're looking to contribute, here are some good starting points.
+Finally you can run our app
 
-### Email Updates
-
-Using Amazon FPS will send users a notification when they place an order, however, it's nice to notify people when they place an order. 
-
-Something that we built into Lockitron.com was "Remind Me" functionality. The idea behind this is that you can capture potential backers and notify them near the end of your campaign that they should reserve your product. We have no data on this yet, however, it seems to be part of why Kickstarter campaigns pick up a lot of steam in their final hours.
-
-### Reporting
-
-There is no admin panel with Selfstarter. This could be useful when the project's funding time is over and you want to export your orders elsewhere.
-
-Relatedly, some analytics would be nice. It'd be good to know how many reservations you receive over time, as well as the specifics of each order. Customers may have questions or might want to modify their order after they've placed it.
-
-### Alternate Payment Processors
-
-Amazon Payments works great for us, but it may not work out for everyone. If you'd rather use Stripe, WePay, or any other payment processor, feel free to send out a pull request.
-
-### Tests
-
-There aren't any tests yet. Tests are very welcome!
+```bash
+rails server
+```
 
 
+```bash
+ruby-1.9.2-p320@openfund
+```
