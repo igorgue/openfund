@@ -1,63 +1,81 @@
 
-body{background-image: url('straws.png');background-repeat: repeat; margin:0;}
-#stats{padding-left: 5px;}
-#mainbox{background-color: rgba(0, 0, 0, 0.1);}
-.navbar-inner{color:white;font-family: 'Signika Negative', sans-serif;}
-#statbox{margin-left: 0px}
-#headline {text-align: center;}
-.row{word-wrap:break-word;}
-#video iframe{margin-top:5px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
-.progress{height: 35px;margin-right:5px;margin-left:5px;}
-.progress h3 {margin-top: 0px;}
-#title{text-align: center;font-family: 'Signika Negative', sans-serif;}
-#title h3{font-size: 23px; line-height: 100%;margin-bottom: -13px;}
-#blerb {word-wrap:break-word;overflow: hidden;padding-left: 5px;padding-right: 5px;}
-#image {width:370px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
-#imageborder img{bottom:0;width:370px; bottom:-32px;}
-#imageborder{overflow: hidden;}
-#border img{}
-#levels{word-wrap:break-word;}
-#payment-form{padding-right: 5px;padding-left:5px ;}
-#usermetadata{padding-right: 5px;padding-left:5px ;}
+#footdoctor{background:#D7D8D8 !important;color:rgba(0, 0, 0, 0.6);    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.64);
+-moz-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.64);
+box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.64);
+bottom: 0;}
+.container{overflow: hidden;}
+hr{margin-top:0 ;margin-bottom:0;border-width: 1px 0; border-color: #D3D3D3}
+.navbar-fixed-top { position: absolute!important; }
+.navbar
+  .navbar-inner {
+    background:white;
+    background-image:none ;
+    border:none;
+    position: relative;
+    -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.64);
+-moz-box-shadow:    0px 1px 5px rgba(0, 0, 0, 0.64);
+box-shadow:         0px 1px 5px rgba(0, 0, 0, 0.64);
+  }
+.navbar
+  .navbar-inner h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top:20px ;
+  margin-bottom:20px ;
+  font-size: 320%;
+  text-align: center;
+  color:#323232 !important;
+  font-weight: bold;
 
-
-
+}
+body{margin:0;font-family: 'Source Sans Pro', sans-serif;background:#FAFAFA;}
+p {color:#6B6B6B;text_shadow: 0 1px 0px #fff}
+h1{color:#323232; font-weight:normal;letter-spacing: -2.2px;}
+h2{color:#4B4B4B;}
+h3{color:#292929;}
+h5{color:#4B4B4B;}
 #terms{background-color: rgba(0, 0, 0, 0.1);}
 #terms p{padding-right: 10px;font-size: 85%;}
 #paymentbutton{margin-left:180px;}
-#stats{padding-left: 5px;}
-#stats2{padding-left: 0px;}
-#mainbox{background-color: rgba(0, 0, 0, 0.1);}
+#stats{padding-left: 5px;text-align: center;border-right:solid rgba(0, 0, 0, 0.15) 1px; margin-left: 0px;}
+.half h3{font-size:170%;}
+#stats2{padding-left: 0px;text-align: center;}
+#mainbox h1{ font-size:300%;text-align: center;color:rgba(0, 0, 0, 0.7); margin-bottom: 40px;margin-top: 30px;}
+#mainbox{background:#D7D8D8}
 #SocialMedia{margin-top:45px ;}
 .navbar-inner {
   background-color: blue; /* background color will be black for all browsers */
   background-image: none;
   background-repeat: no-repeat;
-  filter: none;color:white;font-family: 'Signika Negative', sans-serif;
+  filter: none;color:white;
 }
-#statbox{margin-left: 0px}
+#displayhero{padding-top: 0;padding-bottom:0; margin-top:0; margin-bottom:0;}
+#statbox{margin-left: 0px; font-size: 130%;line-height: 30%;margin-top: 20px}
 #headline {text-align: center;}
 .row{word-wrap:break-word;}
-#video iframe{margin-top:10px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
-.progress{height: 35px;margin-right:5px;margin-left:5px;}
+#video{margin-left:0px;}
+#video iframe{width:100%;margin-top:10px;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
+.progress{height: 45px;margin-left:20px; width: 112%;box-shadow: 0 0 3px #888;border-radius: 30px;}
 .progress h3 {margin-top: 0px;}
 #title{text-align: center;font-family: 'Signika Negative', sans-serif;}
 #title h3{font-size: 23px; line-height: 100%;margin-bottom: -13px;}
 #blerb {word-wrap:break-word;overflow: hidden;padding-left: 5px;padding-right: 5px;}
 #image img{width:100%;-moz-box-shadow:0 2px 6px rgba(0,0,0,0.39);-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.39);box-shadow:0 2px 6px rgba(0,0,0,0.39)}
-#imageborder img{bottom:0;width:100%; margin-bottom:-32px;}
-#imageborder{}
-#border img{}
+#imageborder {bottom:0;}
+.hero-unit{padding:0;}
 #levels{word-wrap:break-word; padding-left: 20px;}
 #payment-form{padding-right: 5px;padding-left:5px ;}
 #usermetadata{padding-right: 5px;padding-left:5px ;}
-#footers {float:right;}
+#footers {float:right; margin-right: 10px;}
 #thankyoul{margin-top:-60px;text-align: center;}
+@media all and (max-width: 767px)  {body{padding-left:1px !important;padding-right: 1px !important;}}
 @media all and (max-width: 480px)  {
     .half {
         float: left !important;
-        width: 33% !important
+        width: 33% !important;
+        font-size:94%;
     }
+.progress {width: 47%}  
+#progressbar {float:left; }
 #stats2{padding-right: 5px;text-align: right;}
 #byebyeshadow{display:none;}
 #SocialMedia{padding-left:40px;}
@@ -66,21 +84,29 @@ body{background-image: url('straws.png');background-repeat: repeat; margin:0;}
 .hero-unit{margin-left:10px;}
 #thankyoup{margin:0;padding-left: 5px;padding-bottom:15px ;}
 #thankyoul{margin-top:-40px;}
-#imageborder img{bottom:0;width:100%; margin-bottom:-16px;}
-}
-@media all and (max-width: 767px)  {
-    .progress {
-        float: left !important;
-        width: 97% !important
-    }
-    #stats2{padding-right: 5px;text-align: right;width: 33%;float: left}
-    #stats{width:33%; float: left;}
-#byebyeshadow{display:none;}
-#SocialMedia{padding-left:40px;}
-#terms{margin: 0;margin-top: 0px;padding-top: 5px;}
-#paymentbutton{margin-left:0px;}
-.hero-unit{margin-left:10px;}
-#thankyoup{margin:0;padding-left: 5px;padding-bottom:15px ;}
-}
-.hero-unit{padding:0;}
+#imageborder img{bottom:0;width:100%; margin-bottom:0px;}
+#levels {padding-left:10px;}
+#mainbox {margin-top: 65px;}
 
+.addthis_toolbox a{width: 19%;}
+#video iframe{height:230;}
+#video{padding:3px;}
+
+}
+
+@media all and (max-width: 979px)  {
+.half {
+        float: left !important;
+        width: 33% !important
+    }
+    #progressbar {float:left;}
+#stats2{padding-right: 5px;text-align: center;}
+#levels{padding-left:10px;}
+#mainbox h1{margin-top: 65px;}
+
+
+}
+@media all and (max-width: 1200px)  {
+  #progressbar{width: 190%}  
+  
+}

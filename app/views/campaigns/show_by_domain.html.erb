@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Campaign</title>
+<title><%= @domain_campaign.name %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="OpenFund.co">
@@ -10,10 +10,11 @@
 <!-- Le styles -->
 <%= stylesheet_link_tag "bootstrap" %>
 <%= stylesheet_link_tag "campaign" %>
-<link href='http://fonts.googleapis.com/css?family=Signika+Negative' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet' type='text/css'>
 <style>
 body {
   padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  font-family: 'Source Sans Pro', sans-serif;
 }
 </style>
 
@@ -25,21 +26,20 @@ body {
     <![endif]-->
 
 </head>
-
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="span9 offset2" id="headline">
-      <h1><%= @domain_campaign.name %></h1>
-    </div>
-  </div>
-</div> 
-
-<div id="title"><h3><%= @domain_campaign.tagline %></h3><%= image_tag 'pocket-shadow.png' %></div>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div id="headline">
+          <h1 ><%= @domain_campaign.name %></h1>
+        </div>
+      </div>
+    </div> 
 <div id="mainbox">
+    <br>
+    <h1><%= @domain_campaign.tagline %></h1>
   <div class="container">
     <div class="row" id="meatPotatos">
-      <div class="span10 offset1">
+      <div class="span11 offset1">
         <div class="span5" id="video">
           <% if @domain_campaign %>
             <iframe width="470" height="350" src="http://www.youtube.com/embed/ApUln7AD0_Q" frameborder="0" allowfullscreen></iframe>
@@ -48,68 +48,76 @@ body {
           <% end %>
         </div>           
         <div class="span5" id="statbox">
-          <div class="span1" id="stats">
+          <div class="span2 half" id="stats">
             <h3><%= @domain_campaign.backers %></h3>
             <p class="muted">Backers</p>
           </div>
-          <div class="span2" id="stats" >
+          <div class="span2 half" id="stats" >
             <h3><%= number_to_currency(@domain_campaign.current_funds) %></h3>
             <p class="muted">Of <%= number_to_currency(@domain_campaign.goal) %></p>
           </div>
-          <div class="span1" id="stats">
+          <div class="span1 half" id="stats2">
             <h3><%= @domain_campaign.days_left %></h3>
             <p class="muted">Days left</p>
           </div>  
-          <div class="span4">
-            <div class="progress">
-              <div class="bar bar-success" style="width: <%= @domain_campaign.progress %>%;"></div>
+        </div>  
+ 
+          <div class="span4" id="progressbar">
+                  <br><div class="progress">
+              <div class="bar bar-info" style="width: <%= @domain_campaign.progress %>%;"></div>
               <h3> &nbsp;<%= @domain_campaign.progress %>%</h3>
             </div>
           </div>
           <div class="span4" id="blerb">
             <h3><%= @domain_campaign.secondary_tagline %></h3>
-            <p><%= @domain_campaign.blurb %></p>
-          </div>
-
-        </div>                     
+            <p class="lead"><%= @domain_campaign.blurb %></p>
+          </div>                   
       </div>
-    </div>
-</div><!-- /container --> <div class="offset2"><%= image_tag 'pocket-shadow.png' %></div></div><br><!--/mainbox-->
+    </div><br>
+</div><!-- /container --> 
+
+</div><!--/mainbox-->
+<hr>
 <!--Start Sections--> 
   <%= render :partial => 'campaigns/shared/sections' %>
 
-</div>
-<div class="container">
+<div class="container"><!--StartLevels-->
   <div class="row">
     <div class="span10  offset1" >
     <% @domain_campaign.levels.each do |level| %>
       <div class="span3" id="levels">
         <h3><%= level.title %>: <%= number_to_currency(level.cost) %></h3>
         <p><%= level.description %></p>
-        <a class="btn btn-large btn-success" href="/checkout/<%= level.id %>"><i class="icon-heart"></i><%= number_to_currency(level.cost) %> Fund!</a>          
+        <a class="btn btn-large btn-success" href="/checkout/<%= level.id %>"><i class="icon-heart"></i><%= number_to_currency(level.cost) %> Fund!</a>     
       </div>
-    <% end %>
+   <% end %>
     </div>
-    <div class="span10 offset1" id="moveborder"><%= image_tag 'pocket-shadow.png' %></div>
-  </div><br>
-  <div class="container">
-    <%= render :partial => 'campaigns/shared/faq' %>
-    <div class="span10 offset1" id="moveborder"><%= image_tag 'pocket-shadow.png' %></div>
-  </div><br>
+  </div>
+</div><!--ENDLevels-->
 
+ 
+ <hr><!--line-->
 
+  <%= render :partial => 'campaigns/shared/faq' %><!--FAQ-->
   <!--/Sections-->
   <!--Start Footer-->
-  <div class="container">
+ <div id="footdoctor">
     <div class="row">
-      <div class="span10  offset1">
-        <footer>
-
-          <p><i class="icon-globe"></i>Powered By: <a href="http://www.openfund.co">OpenFund.co</a> </p>
-
-        </footer>    
-  </div></div></div>
-
+           <div class="span10 offset3" >  
+            <!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_default_style " style="padding-top:15px;">
+              <a class="addthis_button_facebook_like" fb:like:layout="button_count" style="width:85px;"></a>
+              <a class="addthis_button_tweet" style="width:85px;"></a>
+              <a class="addthis_button_pinterest_pinit" style="width:70px;margin-right:0;"></a>
+              <a class="addthis_counter addthis_pill_style"></a>
+              <p id="footers"><i class="icon-globe"></i>Powered By: <a href="http://www.openfund.co">OpenFund.co</a> </p>
+            </div>
+              <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+              <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50809aab2b243dde"></script>
+          <!-- AddThis Button END -->       
+        </div>
+    </div>
+</div>
   <!-- Le javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
