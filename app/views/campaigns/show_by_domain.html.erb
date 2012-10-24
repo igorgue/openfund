@@ -65,7 +65,7 @@ body {
           <div class="span4" id="progressbar">
                   <br><div class="progress">
               <div class="bar bar-info" style="width: <%= @domain_campaign.progress %>%;"></div>
-              <h3> &nbsp;<%= @domain_campaign.progress %>%</h3>
+              <h4> &nbsp;<%= @domain_campaign.progress %>%</h4>
             </div>
           </div>
           <div class="span4" id="blerb">
@@ -81,10 +81,26 @@ body {
 <!--Start Sections--> 
   <%= render :partial => 'campaigns/shared/sections' %>
 
+
+<div class="container" id="displayhero"><!---blurbs_pic-->
+    <div class="row">
+           <div class="span10  offset1">
+                <div class="span5" id="blerb">
+                  <h1 >Blerb</h1>
+                     <p class="lead">lerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBlerbBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbBBlerblerbBlerbBlerbBlerbBlerbBlerbB</p>
+                </div>
+                  <div class="span4" id="image">
+                    <img src="img/display_hero.png">
+                 </div> 
+             </div>
+      </div>
+</div><!--/2_blurbs_pic-->
+
+
 <div class="container"><!--StartLevels-->
   <div class="row">
     <div class="span10  offset1" >
-    <% @domain_campaign.levels.each do |level| %>
+      <% @domain_campaign.levels.each do |level| %>
       <div class="span3" id="levels">
         <h3><%= level.title %>: <%= number_to_currency(level.cost) %></h3>
         <p><%= level.description %></p>
@@ -94,10 +110,7 @@ body {
     </div>
   </div>
 </div><!--ENDLevels-->
-
- 
  <hr><!--line-->
-
   <%= render :partial => 'campaigns/shared/faq' %><!--FAQ-->
   <!--/Sections-->
   <!--Start Footer-->

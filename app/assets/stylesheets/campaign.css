@@ -1,5 +1,5 @@
 
-#footdoctor{background:#D7D8D8 !important;color:rgba(0, 0, 0, 0.6);    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.64);
+#footdoctor{background:rgba(0, 0, 0,.02); !important;color:rgba(0, 0, 0, 0.6);    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.64);
 -moz-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.64);
 box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.64);
 bottom: 0;}
@@ -25,7 +25,6 @@ box-shadow:         0px 1px 5px rgba(0, 0, 0, 0.64);
   text-align: center;
   color:#323232 !important;
   font-weight: bold;
-
 }
 body{margin:0;font-family: 'Source Sans Pro', sans-serif;background:#FAFAFA;}
 p {color:#6B6B6B;text_shadow: 0 1px 0px #fff}
@@ -40,7 +39,7 @@ h5{color:#4B4B4B;}
 .half h3{font-size:170%;}
 #stats2{padding-left: 0px;text-align: center;}
 #mainbox h1{ font-size:300%;text-align: center;color:rgba(0, 0, 0, 0.7); margin-bottom: 40px;margin-top: 30px;}
-#mainbox{background:#D7D8D8}
+#mainbox{background-color: rgba(0, 0, 0,.02);}
 #SocialMedia{margin-top:45px ;}
 .navbar-inner {
   background-color: blue; /* background color will be black for all browsers */
@@ -99,7 +98,7 @@ h5{color:#4B4B4B;}
         float: left !important;
         width: 33% !important
     }
-    #progressbar {float:left;}
+#progressbar {float:left;}
 #stats2{padding-right: 5px;text-align: center;}
 #levels{padding-left:10px;}
 #mainbox h1{margin-top: 65px;}
